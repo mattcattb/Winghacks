@@ -18,3 +18,25 @@ nav a {
     text-decoration: none;
     margin-right: 15px;
 }
+
+.embre-pill-map {
+    display:flex;
+    position: absolute;
+    bottom: 80px;
+    left: 20px;
+    width:200px;
+    height: 150px;
+    z-index: 100;
+    align-items:center;
+    justify-content: center;
+    margin:0;
+}
+
+.home-page-embre{
+    float: right;
+    justify-content: right;
+    position: absolute;
+    bottom:0;
+    left:-50px;
+    
+}
