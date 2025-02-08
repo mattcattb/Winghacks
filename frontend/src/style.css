@@ -19,6 +19,23 @@ nav a {
     margin-right: 15px;
 }
 
+.embre-pill-map {
+    display:flex;
+    position: absolute;
+    bottom: 80px;
+    left: 20px;
+    width:200px;
+    height: 150px;
+    z-index: 100;
+    align-items:center;
+    justify-content: center;
+    margin:0;
+}
+
+.map-art{
+
+}
+
 .home-page-embre{
     float: right;
     justify-content: right;

@@ -4,8 +4,8 @@ const Navbar = () => {
     return (
         <nav className={"nav"}>
             <Link to="/" style={{color: "white", textDecoration: "none"}}>Home</Link>
-            <Link to="/map" style={{color: "white", textDecoration: "none"}}>About</Link>
-            <Link to="/contact" style={{color: "white", textDecoration: "none"}}>Contact</Link>
+            <Link to="/map" style={{color: "white", textDecoration: "none"}}>Map</Link>
+            <Link to="/contact" style={{color: "white", textDecoration: "none"}}>Hawk Tuah!</Link>
         </nav>
     )
 }
