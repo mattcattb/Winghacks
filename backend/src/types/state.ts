@@ -2,18 +2,15 @@ import { Document } from "mongoose";
 import internal from "stream";
 
 
-enum restrictionLevel {
-  VERY_HIGH = "",
-  HIGH = "",
-  NEUTRAL = "",
-  LOW = "",
-  VERY_LOW = ""
-}
+type RestrictionLevel = "Very High" | "High" | "Neutral" | "Low" | "Very Low" | string; // Union type
 
-export interface StateDataInterface extends Document {
-  name:string,
-  restrictionLevel: restrictionLevel,
-  restrictionFacts: string[],
-  weeksBan: number,
-  abbr:string
+
+export interface StateData {
+  name: string;
+  restrictionLevel: RestrictionLevel;
+  restrictionFacts: string[];
+  weeksBan: number;
+  abbr: string;
 }
+export interface StateDataInterface extends StateData, Document {}
+

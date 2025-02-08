@@ -4,8 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/index.ts",
-    "seedState": "node src/seed/stateSeed.ts"
+    "dev": "nodemon src/index.ts", 
+    "seed": "nodemon src/seed/stateSeed.ts"
   },
   "keywords": [],
   "author": "",

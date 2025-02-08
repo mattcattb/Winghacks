@@ -1,5 +1,6 @@
+import {StateData} from '../types/state'
 
-const statesArray = [
+const statesArray: StateData[] = [
   {
     name: "Florida",
     restrictionLevel: "Extremely Restrictive",
