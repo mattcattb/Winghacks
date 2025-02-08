@@ -3,28 +3,48 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --dark-purple: #1F0322;
+  --light-purple:#AA7DCE;
+  --light-pink:#F4D7E3;
+  --m-pink:#F4A5AE;
+  --dark-pink:#A8577E;
+
+  background-color: var(--light-purple);
+  color: white;
+}
+
+@font-face {
+  font-family: GelicaSemiBold;
+  src: url(/fonts/GelicaExtraLight.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: GelicaRegular;
+  src: url(/fonts/GelicaRegular.ttf) format("truetype");
+}
+
+@font-face{
+  font-family: GelicaExtraLight;
+  src: url(/fonts/GelicaExtraLight.ttf) format("truetype");
 }
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--dark-pink);
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: var(--light-pink);
 }
 
 body {
   margin: 0;
   display: flex;
+  font-family: GelicaExtraLight;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
@@ -32,7 +52,9 @@ body {
 
 h1 {
   font-size: 3.2em;
+  font-family: GelicaSemiBold;
   line-height: 1.1;
+
 }
 
 button {
@@ -42,7 +64,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--dark-purple);
   cursor: pointer;
   transition: border-color 0.25s;
 }
