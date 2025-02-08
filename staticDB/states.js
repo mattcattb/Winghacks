@@ -8,7 +8,7 @@ const statesArray = [
       "2 weeks required for florida"
     ],
     weeksBan:6,
-    abriv: "Fl"
+    abbr: "Fl"
 
   },
   {
@@ -20,6 +20,6 @@ const statesArray = [
       "God bless america"
     ],
     weeksBan:24,
-    abriv: "Ca"
+    abbr: "Ca"
   }
 ]
