@@ -39,11 +39,7 @@ const EmbreCanvas = () => {
             frameloop="demand"
             shadows
             dpr={[1, 2]}
-<<<<<<< HEAD:frontend/src/threemodels/Embre.jsx
             camera={{ position: [50,10,25], fov: 25 }}
-=======
-            camera={{ position: [5,25,25], fov: 20}}
->>>>>>> 4e6a9f5cbae244042a7a1a98101ecb44a185c6fb:frontend/src/pages/Embre.jsx
             gl={{ preserveDrawingBuffer: true }}
         >
             {/* eslint-disable-next-line react/no-unknown-property */}
