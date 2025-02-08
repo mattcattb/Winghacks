@@ -1,7 +1,7 @@
 import '../App.css'
 import { useState, useEffect } from "react";
 import { Modal } from 'rsuite';
-import statesArray from '../../../staticDB/states.js'
+import {statesArray} from '../../../staticDB/states'
 //create a default space for info to pop up
 function MapComponent() {
    const [selectedState, setselectedState] = useState(null);
