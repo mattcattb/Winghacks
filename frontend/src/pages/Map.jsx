@@ -1,8 +1,7 @@
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 
-function Map() {
-
+function  Map(){
     return <div>
         Meow
         <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>

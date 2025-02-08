@@ -9,28 +9,34 @@
   -moz-osx-font-smoothing: grayscale;
   --dark-purple: #1F0322;
   --light-purple:#AA7DCE;
+  --baby-purple:#ba97c5;
   --light-pink:#F4D7E3;
-  --m-pink:#F4A5AE;
+  --m-pink:#e99fac;
   --dark-pink:#A8577E;
 
-  background-color: var(--light-purple);
+  background-color: var(--baby-purple);
+  background-image: linear-gradient(135deg, var(--light-purple) 0%, var(--light-pink) 100%);
   color: white;
 }
 
 @font-face {
-  font-family: GelicaSemiBold;
-
-  src: url(/fonts/GelicaExtraLight.ttf) format("truetype");
+  font-family: "GelicaSemiBold";
+  src: url("/fonts/GelicaExtraLight.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: GelicaRegular;
-  src: url(/fonts/GelicaRegular.ttf) format("truetype");
+  font-family: "GelicaRegular";
+  src: url("/fonts/GelicaRegular.ttf") format("truetype");
 }
 
 @font-face{
-  font-family: GelicaExtraLight;
-  src: url(/fonts/GelicaExtraLight.ttf) format("truetype");
+  font-family: "GelicaExtraLight";
+  src: url("/fonts/GelicaExtraLight.ttf") format("truetype");
+}
+
+@font-face{
+  font-family: "GelicaBlack";
+  src: url("/fonts/GelicaBlack.ttf") format("truetype");
 }
 
 a {
@@ -45,7 +51,7 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  font-family: GelicaExtraLight;
+  font-family: "GelicaExtraLight";
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
@@ -53,7 +59,7 @@ body {
 
 h1 {
   font-size: 3.2em;
-  font-family: GelicaSemiBold;
+  font-family: "GelicaBlack";
   line-height: 1.1;
 
 }
@@ -69,23 +75,12 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+
+.page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
 }
