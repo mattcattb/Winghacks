@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@react-google-maps/api": "^2.20.5",
     "@react-three/drei": "^9.121.4",
     "@react-three/fiber": "^8.17.14",
     "@types/react": "^18.3.18",
@@ -21,9 +22,10 @@
     "react-dom": "^18.3.1",
     "react-leaflet": "^4.2.1",
     "react-router-dom": "^7.1.5",
-    "react-simple-maps": "^3.0.0",
+    "react-simple-maps": "^1.0.0",
     "react-tilt": "^1.0.2",
-    "react-vertical-timeline-component": "^3.5.3"
+    "react-vertical-timeline-component": "^3.5.3",
+    "three": "^0.173.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",

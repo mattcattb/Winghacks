@@ -1,12 +1,8 @@
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
-
+import MapComponent from "./MapComponent";
 function  Map(){
     return <div>
         Meow
-        <MapContainer>
-            
-        </MapContainer>
+        <MapComponent/>
 
     </div>;
 
