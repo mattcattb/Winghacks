@@ -1,20 +1,8 @@
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
+import './App.css'
 
 function MapComponent() {
-   const [hoveredRegion, setHoveredRegion] = useState(null);
-
-   const handleMouseEnter = (region) => {
-     setHoveredRegion(region);
-   };
- 
-   const handleMouseLeave = () => {
-     setHoveredRegion(null);
-   };
-
-
-
-    return <div>
+   
+    return <div className='map-container'>
         
         <svg
    xmlns:mapsvg="http://mapsvg.com"

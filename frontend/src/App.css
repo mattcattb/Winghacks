@@ -46,3 +46,13 @@
   color: var(--dark-purple);
   width: 60vw;
 }
+
+
+path{
+  fill: var(--dark-pink);
+}
+
+path:hover{
+  fill: var(--light-pink);
+  transition: 100ms;
+}
