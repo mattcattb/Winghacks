@@ -298,13 +298,13 @@ function MapComponent (){
           className="tooltip"
           style={{
             position: "absolute",
-            top: tooltipPosition.y + 10, // Adjust positioning
-            left: tooltipPosition.x + 10, // Adjust positioning
+            top: tooltipPosition.y + 10, 
+            left: tooltipPosition.x + 10, 
             backgroundColor: "rgba(0, 0, 0, 0.7)",
             color: "#fff",
             padding: "5px",
             borderRadius: "5px",
-            pointerEvents: "none", // Prevent tooltip from blocking other elements
+            pointerEvents: "none",
           }}
         >
           {tooltipContent}</div>
