@@ -2,9 +2,9 @@ import EmbreCanvas from "../threemodels/Embre.jsx";
 function Home()
 {
     return <div className="page">
-        <h1>Ab<span style={{color:"#F4D7E3"}}>o</span>rt Missi<span style={{color:"#F4D7E3"}}>o</span>n</h1>
+        <h1>Pl<span style={{color:"#F4D7E3"}}>a</span>n Your C<span style={{color:"#F4D7E3"}}>a</span>re</h1>
         <div className="landing-container">
-            <p> Mission statement and infomrationa bout the project</p>
+            <p> For 50 year, access to abortion</p>
         </div>
         <div className="home-page-embre">
             <EmbreCanvas/>

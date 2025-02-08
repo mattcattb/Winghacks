@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import 'leaflet/dist/leaflet.css';
 import MapComponent from '../components/MapComponent.jsx';
 
@@ -22,5 +23,16 @@ function Map() {
           <EmbrePillCanvas/>
       </div>
     </div>)
+=======
+import MapComponent from "./MapComponent";
+function  Map(){
+    return <div>
+        Meow
+        <MapComponent/>
+
+    </div>;
+
+
+>>>>>>> 4e6a9f5cbae244042a7a1a98101ecb44a185c6fb
 }
 export default Map;

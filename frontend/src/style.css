@@ -32,6 +32,11 @@ nav a {
     margin:0;
 }
 
-.map-art{
-
+.home-page-embre{
+    float: right;
+    justify-content: right;
+    position: absolute;
+    bottom:0;
+    left:-50px;
+    
 }
