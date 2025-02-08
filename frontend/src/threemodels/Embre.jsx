@@ -1,7 +1,7 @@
 import { Suspense, useEffect, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
-import CanvasLoader from './Loader';
+import CanvasLoader from '../pages/Loader';
 
 const Embre = () => {
     const embre = useGLTF("/models/embrehome.glb"); // ✅ Fixed model path

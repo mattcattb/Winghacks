@@ -1,4 +1,4 @@
-import EmbreCanvas from "./Embre.jsx";
+import EmbreCanvas from "../threemodels/Embre.jsx";
 function Home()
 {
     return <div className="page">
