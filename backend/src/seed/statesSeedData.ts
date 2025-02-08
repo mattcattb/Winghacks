@@ -1,9 +1,10 @@
 import {StateData} from '../types/state'
 
+
 const statesArray: StateData[] = [
   {
     name: "Florida",
-    restrictionLevel: 4,
+    restrictionLevel: 5,
     restrictionFacts: [
       "Florida has a 6-week abortion ban.",
       "There are mandatory waiting periods and counseling requirements.",
