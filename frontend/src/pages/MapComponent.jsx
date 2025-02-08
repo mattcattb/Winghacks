@@ -5,12 +5,7 @@ function MapComponent() {
     return <div className='map-container'>
         
         <svg
-   // xmlns:mapsvg="http://mapsvg.com"
-   // xmlns:dc="http://purl.org/dc/elements/1.1/"
-   // xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   // xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   // mapsvg:geoViewBox="-127.55272679845754 50.66828705652597 -64.54920772895363 24.335873369454947"
    viewBox="477 421 593.3779761904764 318.2870370370371"
    width="593.3779761904764"
    height="318.2870370370371">

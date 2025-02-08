@@ -1,6 +1,5 @@
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import EmbrePillCanvas from "./EmbrePill.jsx";
 
 function Map() {
 
@@ -17,7 +16,7 @@ function Map() {
             </Popup>
         </Marker>
         </MapContainer>
-        <EmbrePillCanvas/>
+
     </div>;
 
 
