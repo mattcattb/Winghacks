@@ -3,8 +3,8 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
 import CanvasLoader from './Loader';
 
-const EmbrePill = () => {
-    const embre = useGLTF("/models/embrepill.glb"); // ✅ Fixed model path
+const Embre = () => {
+    const embre = useGLTF("/models/embrehome.glb"); // ✅ Fixed model path
 
     return (
         <group>
@@ -14,7 +14,7 @@ const EmbrePill = () => {
     );
 };
 
-const EmbrePillCanvas = () => {
+const EmbreCanvas = () => {
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
@@ -35,11 +35,11 @@ const EmbrePillCanvas = () => {
 
     return (
         <Canvas
-            style={{width:"100vw", height:"100vh"}}
+            style={{width:"auto", height:"35vh", display:"flex",margin:"auto", float:"left", alignContent:"left"}}
             frameloop="demand"
             shadows
             dpr={[1, 2]}
-            camera={{ position: [60,10,25], fov: 25 }}
+            camera={{ position: [50,10,25], fov: 25 }}
             gl={{ preserveDrawingBuffer: true }}
         >
             {/* eslint-disable-next-line react/no-unknown-property */}
@@ -52,7 +52,7 @@ const EmbrePillCanvas = () => {
                     maxPolarAngle={Math.PI / 2}
                     minPolarAngle={Math.PI / 2}
                 />
-                <EmbrePill isMobile={isMobile} />
+                <Embre isMobile={isMobile} />
             </Suspense>
 
             <Preload all />
@@ -60,4 +60,4 @@ const EmbrePillCanvas = () => {
     );
 };
 
-export default EmbrePillCanvas;
+export default EmbreCanvas;
