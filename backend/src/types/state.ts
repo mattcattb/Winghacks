@@ -2,7 +2,7 @@ import { Document } from "mongoose";
 import internal from "stream";
 
 
-type RestrictionLevel = "Very High" | "High" | "Neutral" | "Low" | "Very Low" | string; // Union type
+type RestrictionLevel = 5 | 4 | 3 | 2 | 1 | string; // Union type
 
 
 export interface StateData {
