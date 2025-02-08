@@ -4,7 +4,7 @@ import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
 import CanvasLoader from './Loader';
 
 const Embre = () => {
-    const embre = useGLTF("/models/embremascot.glb"); // ✅ Fixed model path
+    const embre = useGLTF("/models/embrewave.glb"); // ✅ Fixed model path
 
     return (
         <group>
