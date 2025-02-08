@@ -1,4 +1,7 @@
-export const statesArray = [
+import {StateData} from '../types/state'
+
+
+const statesArray: StateData[] = [
   {
     name: "Florida",
     restrictionLevel: 5,
@@ -111,5 +114,7 @@ export const statesArray = [
   },
   // ... Add more states here
 ];
+
+export default statesArray;
 
 export default statesArray;
