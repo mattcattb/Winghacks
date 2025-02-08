@@ -1,4 +1,4 @@
-const statesArray = [
+export const statesArray = [
   {
     name: "Florida",
     restrictionLevel:"Extremely Restrictive",
@@ -8,7 +8,7 @@ const statesArray = [
       "2 weeks required for florida"
     ],
     weeksBan:6,
-    abriv: "Fl"
+    abbr: "FL"
 
   },
   {
@@ -20,6 +20,6 @@ const statesArray = [
       "God bless america"
     ],
     weeksBan:24,
-    abriv: "Ca"
+    abbr: "CA"
   }
 ]

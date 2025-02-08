@@ -2,12 +2,10 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import MapComponent from './MapComponent.jsx';
 import EmbrePillCanvas from "./EmbrePill.jsx";
-import { useState } from "react";
 import '../style.css'
 
 function Map() {
-    const [hoveredState, setHoveredState] = useState(null);
-        const locations = [
+            const locations = [
             {name:'Florida', coords: [1, 2]},
             {name: 'NY', coords: [2, 3]}
         ]
