@@ -40,3 +40,13 @@
 .read-the-docs {
   color: #888;
 }
+
+
+path{
+  fill: var(--dark-pink);
+}
+
+path:hover{
+  fill: var(--light-pink);
+  transition: 100ms;
+}
