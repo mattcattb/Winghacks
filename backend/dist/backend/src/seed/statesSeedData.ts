@@ -183,12 +183,151 @@ const statesArray: StateData[] = [
   },
   {
     name: "North Dakota",
-    restrictionLevel: 3,
+    restrictionLevel: 4,
     restrictionFacts: [
-        "North Dakota has a 6-week abortion ban.",
+        "North Dakota has a 6-week abortion ban",
+        "There are only exceptions: to save the pregnant person's life, to preserve the pregnant person's physical health, If the pregnancy is a result of rape and/or incest .",
         "There are mandatory waiting periods and counseling requirements.",
         "Parental consent required for minors"
     ],
+    weeksBan: 6,
+    abbr: "ND",
+  },
+  {
+    name: "Ohio",
+    restrictionLevel: 2,
+    restrictionFacts: [
+        "Ohio has a 20-week abortion ban.",
+        "Parental consent required for minors"
+    ],
+    weeksBan: 20,
+    abbr: "OH",
+  },
+  {
+    name: "Oklahoma",
+    restrictionLevel: 5,
+    restrictionFacts: [
+        "Oklahoma has a near-total abortion ban.",
+        "There are no exceptions to this rule",
+    ],
+    weeksBan: 0,
+    abbr: "OK",
+  },
+  {
+    name: "Oregon",
+    restrictionLevel: 1,
+    restrictionFacts: [
+        "Oregon has strong protections for abortion rights.",
+        "The state has expanded access to reproductive healthcare.",
+        "Parental Consent required for minors"
+    ],
+    weeksBan: 24,
+    abbr: "OR",
+  },
+  {
+    name:"Rhode Island",
+    restrictionLevel: 1,
+    restrictionFacts: [
+        "Rhode Island has strong protections for abortion rights.",
+        "The state has expanded access to reproductive healthcare.",
+        "Parental consent required for minors"
+    ],
+    weeksBan: 24,
+    abbr: "RI",
+  },
+  {
+    name: "South Carolina",
+    restrictionLevel: 4,
+    restrictionFacts: [
+        "South Carolina has a 6-week abortion ban.",
+        "There are mandatory waiting periods and counseling requirements.",
+        "Parental consent required for minors",
+        "After 6 weeks, only exceptions are to save the pregnant person's life, to preserve the pregnant person's physical health, ff the pregnancy is a result of incest/rape, or if the fetus has a low chance of survival."
+    ],
+    weeksBan: 6,
+    abbr: "SC",
+  },
+  {
+    name: "South Dakota",
+    restrictionLevel: 5,
+    restrictionFacts: [
+      "Exceptions are very limited and include: To save the pregnant person's life, to preserve the pregnant person's physical health, or if the fetus is not expected to survive the pregnancy",
+    ],
+    weeksBan: 0,
+    abbr: "SD",
+  },
+  {
+    name: "Tennessee",
+    restrictionLevel: 5,
+    restrictionFacts: [
+        "Exceptions are very limited and include: To save the pregnant person's life, to preserve the pregnant person's physical health, or if the fetus is not expected to survive the pregnancy",
+    ],
+    weeksBan: 0,
+    abbr: "TN",
+  },
+  {
+    name: "Utah",
+    restrictionLevel: 4,
+    restrictionFacts: [
+        "Utah has a 18-week abortion ban.",
+        "Parental consent required for minors",
+        "72 hour waiting period is required before an abortion can be performed"
+    ],
+    weeksBan: 18,
+    abbr: "UT",
+  },
+  {
+    name: "Vermont",
+    restrictionLevel: 1,
+    restrictionFacts: [
+        "Vermont has strong protections for abortion rights.",
+        "The state has expanded access to reproductive healthcare.",
+        "Parental consent is not required for minors"
+    ],
+    weeksBan: 24,
+    abbr: "VT",
+  },
+  {
+    name: "Virginia",
+    restrictionLevel: 2,
+    restrictionFacts: [
+        "Few restrictions on abortion access.",
+        "Parental consent required for minors"
+    ],
+    weeksBan: 24,
+    abbr: "VA",
+  },
+  {
+    name: "Washington",
+    restrictionLevel: 1,
+    restrictionFacts: [
+        "Washington has strong protections for abortion rights.",
+        "The state has expanded access to reproductive healthcare.",
+        "Parental consent is not required for minors"
+    ],
+    weeksBan: 24,
+    abbr: "WA",
+  },
+  {
+    name: "West Virginia",
+    restrictionLevel: 5,
+    restrictionFacts: [
+        "West Virginia has a near-total abortion ban.",
+        "Exceptions are very limited and include: To save the pregnant person's life, to preserve the pregnant person's physical health, or if the fetus is not expected to survive the pregnancy",
+      ],
+    weeksBan: 0,
+    abbr: "WV",
+  },
+  {
+    name: "Wisconsin",
+    restrictionLevel: 4,
+    restrictionFacts: [
+        "Wisconsin has a 20-week abortion ban.",
+        "Parental consent required for minors",
+        "24 hour waiting period is required before an abortion can be performed",
+    ],
+    weeksBan: 20,
+    abbr: "WI",
   }
   
 ];
