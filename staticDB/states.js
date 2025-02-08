@@ -1,5 +1,4 @@
-
-const statesArray = [
+export const statesArray = [
   {
     name: "Florida",
     restrictionLevel: 5,
@@ -8,8 +7,9 @@ const statesArray = [
       "There are mandatory waiting periods and counseling requirements.",
       "Access to medication abortion may be limited."
     ],
-    weeksBan: 6,
-    abbr: "FL",
+    weeksBan:6,
+    abbr: "FL"
+
   },
   {
     name: "California",

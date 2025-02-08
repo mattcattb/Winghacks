@@ -39,7 +39,7 @@ const EmbrePillCanvas = () => {
             frameloop="demand"
             shadows
             dpr={[1, 2]}
-            camera={{ position: [5,10,25], fov: 25 }}
+            camera={{ position: [60,10,25], fov: 25 }}
             gl={{ preserveDrawingBuffer: true }}
         >
             {/* eslint-disable-next-line react/no-unknown-property */}

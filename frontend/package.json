@@ -19,12 +19,15 @@
     "@vis.gl/react-google-maps": "^1.5.1",
     "axios": "^1.7.9",
     "framer-motion": "^12.4.1",
+    "leaflet": "^1.9.4",
     "maath": "^0.10.8",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-leaflet": "^4.2.1",
     "react-router-dom": "^7.1.5",
     "react-tilt": "^1.0.2",
-    "react-vertical-timeline-component": "^3.5.3"
+    "react-vertical-timeline-component": "^3.5.3",
+    "rsuite": "^5.77.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",
