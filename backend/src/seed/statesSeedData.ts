@@ -1,9 +1,10 @@
 import {StateData} from '../types/state'
 
+
 const statesArray: StateData[] = [
   {
     name: "Florida",
-    restrictionLevel: "Extremely Restrictive",
+    restrictionLevel: 5,
     restrictionFacts: [
       "Florida has a 6-week abortion ban.",
       "There are mandatory waiting periods and counseling requirements.",
@@ -14,7 +15,7 @@ const statesArray: StateData[] = [
   },
   {
     name: "California",
-    restrictionLevel: "Extremely Protected",
+    restrictionLevel: 0,
     restrictionFacts: [
       "California has strong protections for abortion access.",
       "There are no significant restrictions on abortion.",
@@ -25,7 +26,7 @@ const statesArray: StateData[] = [
   },
   {
     name: "Georgia",
-    restrictionLevel: "Highly Restrictive", // Added restriction level
+    restrictionLevel: 4, // Added restriction level
     restrictionFacts: [
       "Georgia has a gestational age ban (typically around 6 weeks).",
       "There are exceptions for the life of the pregnant person.",
@@ -36,7 +37,7 @@ const statesArray: StateData[] = [
   },
   {
     name: "Texas",
-    restrictionLevel: "Extremely Restrictive",
+    restrictionLevel: 5,
     restrictionFacts: [
       "Texas has a near-total abortion ban.",
       "Private citizens can sue anyone who performs or aids an abortion.",
@@ -47,7 +48,7 @@ const statesArray: StateData[] = [
   },
   {
     name: "New York",
-    restrictionLevel: "Protected",
+    restrictionLevel: 0,
     restrictionFacts: [
       "New York has strong protections for abortion rights.",
       "Abortion is legal throughout pregnancy.",
@@ -58,7 +59,7 @@ const statesArray: StateData[] = [
   },
   {
     name: "Wyoming",
-    restrictionLevel: "Highly Restrictive",
+    restrictionLevel: 5,
     restrictionFacts: [
         "Wyoming has a near-total abortion ban.",
         "There are very limited exceptions.",
@@ -69,7 +70,7 @@ const statesArray: StateData[] = [
   },
     {
     name: "Arizona",
-    restrictionLevel: "Highly Restrictive",
+    restrictionLevel: 5,
     restrictionFacts: [
         "Arizona's laws are complex and subject to change.",
         "There are restrictions on medication abortion.",
@@ -80,7 +81,7 @@ const statesArray: StateData[] = [
   },
   {
     name: "Pennsylvania",
-    restrictionLevel: "Moderately Restrictive",
+    restrictionLevel: 3,
     restrictionFacts: [
         "Pennsylvania has some restrictions on abortion, including waiting periods.",
         "Access to abortion care varies across the state.",
@@ -91,7 +92,7 @@ const statesArray: StateData[] = [
   },
   {
     name: "Colorado",
-    restrictionLevel: "Protected",
+    restrictionLevel: 1,
     restrictionFacts: [
         "Colorado has no gestational age limit on abortion.",
         "There are strong protections for abortion access.",
@@ -102,7 +103,7 @@ const statesArray: StateData[] = [
   },
   {
     name: "Illinois",
-    restrictionLevel: "Protected",
+    restrictionLevel: 1,
     restrictionFacts: [
         "Illinois has strong protections for abortion rights.",
         "Abortion is legal throughout pregnancy.",
@@ -113,5 +114,7 @@ const statesArray: StateData[] = [
   },
   // ... Add more states here
 ];
+
+export default statesArray;
 
 export default statesArray;
