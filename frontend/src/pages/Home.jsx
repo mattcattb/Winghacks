@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+
+
 
 function Home()
 {
@@ -6,6 +9,7 @@ function Home()
         <div className="landing-container">
             <p> Mission statement and infomrationa bout the project</p>
         </div> 
+        <button className="btn"><Link to="/map">Map</Link></button>
     </div>;
 }
 export default Home;
