@@ -1,7 +1,7 @@
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 // import 'leaflet/dist/leaflet.css';
-import MapComponent from './MapComponent.jsx';
-import EmbrePillCanvas from "./EmbrePill.jsx";
+import MapComponent from '../components/MapComponent.jsx';
+
+import EmbrePillCanvas from "../threemodels/EmbrePill.jsx";
 import '../style.css'
 
 function Map() {
@@ -9,27 +9,18 @@ function Map() {
             {name:'Florida', coords: [1, 2]},
             {name: 'NY', coords: [2, 3]}
         ]
-    return <div>
-        <div className={"map-header"}>
-            <h1>What is the state of your state?</h1>
-        </div>
-        <div className={'map-art'}>
-        <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
-        <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-      />
-        <Marker position={[51.505, -0.09]}>
-            <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
-            </Popup>
-        </Marker>
-        </MapContainer>
+    return (
+    <div className='flex flex-col'>
+      <div className={"map-header"}>
+          <h1>What is the state of your state?</h1>
+      </div>
+      <div className={'map-art'}>
+
         <MapComponent location={locations} />
-        </div>
-        <div className={"embre-pill-map"}>
-            <EmbrePillCanvas/>
-        </div>
-    </div>
+      </div>
+      <div className={"embre-pill-map"}>
+          <EmbrePillCanvas/>
+      </div>
+    </div>)
 }
 export default Map;

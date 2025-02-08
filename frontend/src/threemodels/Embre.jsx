@@ -1,7 +1,7 @@
 import { Suspense, useEffect, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
-import CanvasLoader from '../pages/Loader';
+import CanvasLoader from './Loader';
 
 const Embre = () => {
     const embre = useGLTF("/models/embrehome.glb"); // ✅ Fixed model path
@@ -39,7 +39,7 @@ const EmbreCanvas = () => {
             frameloop="demand"
             shadows
             dpr={[1, 2]}
-            camera={{ position: [5,10,25], fov: 25 }}
+            camera={{ position: [50,10,25], fov: 25 }}
             gl={{ preserveDrawingBuffer: true }}
         >
             {/* eslint-disable-next-line react/no-unknown-property */}
