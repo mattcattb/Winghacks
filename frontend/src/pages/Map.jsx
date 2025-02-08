@@ -1,4 +1,3 @@
-// import 'leaflet/dist/leaflet.css';
 import MapComponent from '../components/MapComponent.jsx';
 
 import EmbrePillCanvas from "../threemodels/EmbrePill.jsx";
