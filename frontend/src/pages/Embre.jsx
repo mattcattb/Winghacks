@@ -35,11 +35,11 @@ const EmbreCanvas = () => {
 
     return (
         <Canvas
-            style={{width:"100vw", height:"100vh"}}
+            style={{width:"auto", height:"35vh", display:"flex",margin:"auto", float:"left", alignContent:"left"}}
             frameloop="demand"
             shadows
             dpr={[1, 2]}
-            camera={{ position: [5,10,25], fov: 25 }}
+            camera={{ position: [5,25,25], fov: 20}}
             gl={{ preserveDrawingBuffer: true }}
         >
             {/* eslint-disable-next-line react/no-unknown-property */}

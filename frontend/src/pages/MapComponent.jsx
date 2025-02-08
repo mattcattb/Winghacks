@@ -289,7 +289,6 @@ function MapComponent() {
       </Modal>
 
 </div>;
-
-
 }
+
 export default MapComponent;
