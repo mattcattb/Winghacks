@@ -40,6 +40,7 @@ function Map() {
 
     console.log(`state clicked: ${stateId}`);
     console.log(`state info: ${JSON.stringify(stateInfo)}`);
+    console.log(`total states: ${stateInfo.length()}`)
   };
   useEffect(() => {
     // Scroll to the section when selectedState changes and is not null
@@ -51,9 +52,11 @@ function Map() {
   return (
     <div className="flex flex-col min-h-screen">
       <div className="map-header py-16 text-center mt-5">
-        <h1 className="text-3xl md:text-8xl font-bold">
-          Find resources for your state.
-        </h1>
+      <h1 className="bg-[#1F0322] px-[6vh] py-[6vh] rounded-[5vh] inline-block text-[3em] font-gelica-black leading-[0.5]">
+        Find resources for your state.
+      </h1>
+
+
       </div>
       <div className={"map-art"}>
         <div className="map-container w-full h-[800px] flex flex-col justify-center">

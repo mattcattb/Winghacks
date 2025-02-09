@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -55,7 +51,7 @@ path:hover{
 .phone-container {
   position: relative;
   width: 440px; 
-  height: 655px; /* Adjust to the height of your phone SVG */
+  height: 800px; /* Adjust to the height of your phone SVG */
   margin: 0 auto;
 }
 
@@ -112,10 +108,27 @@ path:hover{
 .refrences{
   display: flex;
   width: 33vw;
-  height: 20vh;
+  height: 15vh;
   background-color: aliceblue;
   overflow: scroll;
   flex-direction: column;
   border-radius: 10px;
 }
 
+.hello {
+  animation-name: hello;
+  animation-duration: 1.3s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+@keyframes hello {
+  0% {
+    top: 0px;
+  }
+  100% {
+    top: -15px;
+  }
+}
