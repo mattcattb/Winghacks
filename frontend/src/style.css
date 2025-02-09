@@ -35,7 +35,7 @@ nav a:hover{
     left: 20px;
     width:200px;
     height: 150px;
-    z-index: 100;
+    z-index: -10;
     align-items:center;
     justify-content: center;
     margin:0;
@@ -57,4 +57,5 @@ nav a:hover{
     display:flex;
     bottom: -10vh;
     position:absolute;
+    z-index:-10;
 }
