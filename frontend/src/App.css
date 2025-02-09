@@ -104,3 +104,13 @@ path:hover{
 .rs-picker{
   width: 110%;
 }
+
+.refrences{
+  display: flex;
+  width: 33vw;
+  height: 20vh;
+  background-color: aliceblue;
+  overflow: scroll;
+  flex-direction: column;
+  border-radius: 10px;
+}
