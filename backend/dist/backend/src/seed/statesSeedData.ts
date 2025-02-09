@@ -1,4 +1,4 @@
-import {StateData} from '../types/state'
+import {StateData} from '../types/state.js';
 
 const statesArray: StateData[] = [
   {
@@ -392,10 +392,6 @@ const statesArray: StateData[] = [
     weeksBan: 23,
     abbr: "NH",
   },
-
-
-
-
 
 ];
 
