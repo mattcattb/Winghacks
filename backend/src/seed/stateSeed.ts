@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 import StateDataModel from '../models/stateStats.model';
 import { StateDataInterface } from '../types/state';
 
-import statesArray from './statesSeedData';
+import {statesArray} from './statesSeedData';
 
 dotenv.config(); // Load environment variables (for DB connection)
 

@@ -1,26 +1,125 @@
 // import 'leaflet/dist/leaflet.css';
-import MapComponent from '../components/MapComponent.jsx';
+import WeirdMapComp from "../components/WeirdMapComp";
+import "../App.css";
 
 import EmbrePillCanvas from "../threemodels/EmbrePill.jsx";
-import '../style.css'
+import { useState, useEffect, useRef } from "react";
+import { statesArray } from "../../../staticDB/states";
+import {mapData} from '../assets/mapSVG.js'
+
+import {getAllStatesData} from '../api/statesData.js'
+
+import { getRestrictionColor, getStateFill } from "../api/colorUtils.js";
+
+import "../style.css";
+
 
 function Map() {
-            const locations = [
-            {name:'Florida', coords: [1, 2]},
-            {name: 'NY', coords: [2, 3]}
-        ]
-    return (
-    <div className='flex flex-col'>
-      <div className={"map-header"}>
-          <h1>What is the state of your state?</h1>
-      </div>
-      <div className={'map-art'}>
+  const [selectedState, setselectedState] = useState(null);
+  const [statesData, setStatesData] = useState([]);
+  const sectionRef = useRef(null); // Ref for the section
 
-        <MapComponent location={locations} />
+  useEffect(() => {
+    // load states data
+
+    const loadAllStates = async () => {
+
+      const allStatesData = await getAllStatesData();
+      console.log(JSON.stringify(allStatesData))
+      setStatesData(allStatesData);
+      console.log(statesData)
+    }
+
+    loadAllStates()
+
+  }, []);
+
+  const handleClick = (stateId) => {
+    // const stateId = e.target.getAttribute("id");
+    const stateInfo = statesData.find((state) => state.abbr === stateId);
+    setselectedState(stateInfo || null);
+
+    console.log(`state clicked: ${stateId}`);
+    console.log(`state info: ${JSON.stringify(stateInfo)}`);
+  };
+  useEffect(() => {
+    // Scroll to the section when selectedState changes and is not null
+    if (selectedState && sectionRef.current) {
+      sectionRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [selectedState]); // This makes the effect run when selectedState changes
+
+  return (
+    <div className="flex flex-col min-h-screen">
+      <div className="map-header py-16 text-center">
+        <h1 className="text-6xl md:text-8xl font-bold text-gray-800">
+          Find resources for your state.
+        </h1>
       </div>
-      <div className={"embre-pill-map"}>
-          <EmbrePillCanvas/>
+      <div className={"map-art"}>
+        <div className="map-container w-full h-[900px] flex flex-col justify-center">
+          
+        <div className="map-container w-full h-[900px] flex flex-col justify-center">
+          {statesData.length > 0 && ( // Only render the SVG if statesData is loaded
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="477 421 593.3779761904764 318.2870370370371"
+              preserveAspectRatio="xMidYMid meet"
+              className="w-full h-full"
+            >
+              {mapData.map(({ id, d, title }) => {
+                const matchingState = statesData.find(state => state.abbr.toUpperCase() === id.toUpperCase()); // Use statesData here!
+                const fillClass = matchingState ? getStateFill(matchingState.restrictionLevel) || "fill-gray-700" : "fill-gray-700"; // Default if no match
+
+                return (
+                  <path
+                    key={id}
+                    d={d}
+                    className={`${fillClass} hover:fill-fuchsia-300 transition duration-300 cursor-pointer`}
+                    title={title}
+                    onClick={() => handleClick(id)}
+                    id={id}
+                  />
+                );
+              })}
+            </svg>
+          )}
+          {!statesData.length && <p>Loading map...</p>} {/* Display a loading message */}
+        </div>
+
+        </div>
+        <div className="flex flex-row items-center">
+          <div className="py-10 flex justify-center">
+            {/* Embre pill container */}
+            <div className="">
+              <EmbrePillCanvas />
+            </div>
+          </div>
+          
+          <section
+            ref={sectionRef}
+            className="state-info-section m-10 w-[700px] pt-14 ">
+            {selectedState && ( // Conditionally render the section
+              <div className="m-4 rounded-lg bg-purple-200 p-7">
+                <div className="flex flex-row justify-center items-center gap-5">
+                  <h2 className="font-bold text-7xl text-fuchsia-700">
+                    {selectedState.name}
+                  </h2>
+                  <p className={`text-4xl ${getRestrictionColor(selectedState.restrictionLevel)}`}>
+                    Restriction Level: {selectedState.restrictionLevel}
+                  </p>
+                </div>
+                <div className='flex flex-col m-4 gap-2 text-fuchsia-800'>
+                  {selectedState.restrictionFacts.map((fact, idx) => (
+                    <p key={idx}>{fact}</p>
+                  ))}
+                </div>
+              </div>
+            )}
+          </section>
+        </div>
       </div>
-    </div>)
+    </div>
+  );
 }
 export default Map;

@@ -84,3 +84,6 @@ button {
   justify-content: center;
   overflow: auto;
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

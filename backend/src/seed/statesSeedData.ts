@@ -1,7 +1,7 @@
 import {StateData} from '../types/state'
 
 
-const statesArray: StateData[] = [
+export const statesArray: StateData[] = [
   {
     name: "Florida",
 
