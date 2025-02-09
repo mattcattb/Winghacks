@@ -23,22 +23,25 @@ export default function EmbreChat(){
  
         setState(selectedValue); //passes in an abbriviation
     
-    }
+    };
     
     
-    const handleWeeks = (label, item) =>{
-        setWeeks(item.label);
-    }
+    const handleWeeks = (value) =>{
+        if (value !== null && !isNaN(value)) {
+            console.log("Weeks selected:", value);  // Debugging log
+            setWeeks(value);  // Store the selected number
+        }
+    };
 
     const handleNextStep = () => {
         setBubble(prevStep => prevStep + 1);
-
-        if (showBubble === 3) {
+        if (showBubble === 1) {
             const { data, aborMess } = questionLogic(state, weeks);
             setMatchedState(data);
             setAborMess(aborMess); 
             console.log(aborMess)
         }
+
     };
 
 

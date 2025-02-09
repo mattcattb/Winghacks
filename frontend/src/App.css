@@ -104,3 +104,31 @@ path:hover{
 .rs-picker{
   width: 110%;
 }
+
+.refrences{
+  display: flex;
+  width: 33vw;
+  height: 15vh;
+  background-color: aliceblue;
+  overflow: scroll;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.hello {
+  animation-name: hello;
+  animation-duration: 1.3s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+@keyframes hello {
+  0% {
+    top: 0px;
+  }
+  100% {
+    top: -15px;
+  }
+}
