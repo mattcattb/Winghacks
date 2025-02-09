@@ -1,11 +1,14 @@
 // src/api/axiosClient.js (or src/utils/axios.js, or similar)
 import axios from 'axios';
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const PORT = 3000
-const url = `http://localhost:${PORT}/`
+const url =  import.meta.env.VITE_API_BASE_URL | `http://localhost:${PORT}/api`
 
 const axiosClient = axios.create({
-  baseURL: url + 'api/', // Your API base URL
+  baseURL: url, // Your API base URL
   // You can add other defaults here, like headers:
   // headers: {
   //   'Content-Type': 'application/json',

@@ -1,108 +1,72 @@
-import React, { useState, useEffect } from 'react';
-import { GoogleMap, useJsApiLoader, Marker, InfoWindow } from '@react-google-maps/api'; // Correct import
+import React, { useState } from 'react';
+import axios from 'axios';
+import Geocode from "react-geocoding";
 
-const containerStyle = {
-  width: '400px',
-  height: '300px'
-};
 
-const center = {
-  lat: 29.6519,
-  lng: -82.3250
-};
+import { getNearbyClinics } from '../api/clinic';
 
-const GOOGLEMAPS_API_KEY = 'YOUR_API_KEY'; // Replace with your API key
+const GEO_API_KEY = import.meta.env.VITE_GEOCODING_API_KEY
 
-export default function ClinicFinder() {
-  const { isLoaded } = useJsApiLoader({
-    id: 'googleMaps',
-    googleMapsApiKey: GOOGLEMAPS_API_KEY // Use the constant
-  });
+Geocode.setApiKey(GEO_API_KEY); // Replace with your API key
 
-  const [map, setMap] = useState(null);
-  const [userLocation, setUserLocation] = useState(null);
-  const [nearbyLocations, setNearbyLocations] = useState([]);
-  const [selectedLocation, setSelectedLocation] = useState(null);
+const ClinicFinder = () => {
+  const [address, setAddress] = useState('');
+  const [clinics, setClinics] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false); // Add loading state
 
-  useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          setUserLocation({
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-          });
-          if (map) {
-            map.panTo({
-              lat: position.coords.latitude,
-              lng: position.coords.longitude,
-            });
-          }
-        },
-        (error) => {
-          console.error("Error getting location:", error);
-        }
-      );
-    } else {
-      console.error("Geolocation not supported.");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError(null);
+    setLoading(true); // Set loading to true
+
+    try {
+      const response = await Geocode.fromAddress(address); // Geocode the address
+
+      const { lat, lng } = response.results[0].geometry.location;
+
+      const nearbyClinics = await getNearbyClinics(lat, lng)
+
+      setClinics(nearbyClinics);
+
+    } catch (err) {
+      console.error("Error:", err);
+      setError("Error finding clinics. Please try again.");
+    } finally {
+      setLoading(false); // Set loading to false, regardless of success or failure
     }
-  }, [map]);
-
-  useEffect(() => {
-    const fetchNearbyLocations = async () => {
-      // Placeholder Data:
-      const sampleData = [
-        { id: 1, name: "Coffee Shop A", lat: 29.65, lng: -82.32 }, // Corrected lng
-        { id: 2, name: "Park B", lat: 29.66, lng: -82.31 },
-        { id: 3, name: "Restaurant C", lat: 29.64, lng: -82.33 },
-      ];
-      setNearbyLocations(sampleData);
-    };
-
-    if (userLocation) {
-      fetchNearbyLocations();
-    }
-  }, [userLocation]);
-
-  const onLoad = function(map) {
-    setMap(map);
   };
 
-  const onUnmount = function() {
-    setMap(null);
-  };
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          value={address}
+          onChange={(e) => setAddress(e.target.value)}
+          placeholder="Enter your address"
+          required // Basic validation
+        />
+        <button type="submit" disabled={loading}> {/* Disable button while loading */}
+          {loading ? "Finding Clinics..." : "Find Clinics"} {/* Show loading message */}
+        </button>
+      </form>
 
-  return isLoaded ? (
-    <GoogleMap
-      mapContainerStyle={containerStyle}
-      center={userLocation || center}
-      zoom={14}
-      onLoad={onLoad}
-      onUnmount={onUnmount}
-    >
-      {userLocation && <Marker position={userLocation} />}
-      {nearbyLocations.map((location) => (
-        <Marker
-          key={location.id} // Use a unique key (id is best)
-          position={{ lat: location.lat, lng: location.lng }} // Corrected lng
-          onClick={() => setSelectedLocation(location)}
-        >
-          {/* You can add content to the marker here if needed */}
-        </Marker>
-      ))}
+      {error && <p style={{ color: 'red' }}>{error}</p>}
 
-      {selectedLocation && (
-        <InfoWindow
-          position={{ lat: selectedLocation.lat, lng: selectedLocation.lng }}
-          onCloseClick={() => setSelectedLocation(null)}
-        >
-          <div>
-            <h3>{selectedLocation.name}</h3>
-          </div>
-        </InfoWindow>
+      {loading && <p>Loading...</p>} {/* Display loading message */}
+
+      {clinics.length > 0 && !loading ? ( // Only show results if not loading
+        <ul>
+          {clinics.map((clinic) => (
+            <li key={clinic._id}>{clinic.name}</li>
+          ))}
+        </ul>
+      ) : (
+        !loading && <p>{clinics.length === 0 ? "No clinics found." : ""}</p> // Only show "no clinics" message if not loading
       )}
-    </GoogleMap>
-  ) : (
-    <div>Map not loaded...</div>
+    </div>
   );
-}
+};
+
+export default ClinicFinder;
