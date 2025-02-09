@@ -5,7 +5,7 @@ import { ClinicInterface } from '../types/clinic'
 const ClinicSchema = new Schema<ClinicInterface>({
   name: {type:String, required:true},
   lat: {type: Number, required:true},
-  long: {type: Number, required:true},
+  lng: {type: Number, required:true},
   state:{type:String, required: true}
 })
 
