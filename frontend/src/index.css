@@ -60,12 +60,13 @@ body {
 
 h1 {
   background-color: #1F0322;
-  padding: 6vh 6vh; /* Add padding around the text */
-  border-radius: 5vh; /* Optional: Rounded corners */
+  padding: 5vh 5vh;
+  border-radius: 5vh; 
   display: inline-block;
-  font-size: 2em;
+  font-size: 2.75em;
   font-family: "GelicaBlack";
   line-height: 1;
+  letter-spacing: .2vh;
 
 }
 h2 {

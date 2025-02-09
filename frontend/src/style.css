@@ -1,13 +1,13 @@
 nav {
     background: #1F0322;
-    padding: 10px;
+    padding: 0px;
     width: 100%;
     top:0;
     left:0;
     justify-content: space-around;
     align-items: center;
     display: flex;
-    gap: 20px;
+    gap: 0px;
     z-index:100;
     position: fixed;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -16,9 +16,18 @@ nav {
 nav a {
     color: white;
     text-decoration: none;
-    margin-right: 15px;
+    line-height: 75px; 
+    flex: 1;
+    text-align: center;
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 0px;
 }
 
+nav a:hover{
+    background-color: #AA7DCE;
+    color: #1F0322;
+}
 .embre-pill-map {
     display:flex;
     position: absolute;
