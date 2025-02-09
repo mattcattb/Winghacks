@@ -1,23 +1,4 @@
-nav {
-    background: #1F0322;
-    padding: 10px;
-    width: 100%;
-    top:0;
-    left:0;
-    justify-content: space-around;
-    align-items: center;
-    display: flex;
-    gap: 20px;
-    z-index:100;
-    position: fixed;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin-right: 15px;
-}
 
 
 .home-page-embre{

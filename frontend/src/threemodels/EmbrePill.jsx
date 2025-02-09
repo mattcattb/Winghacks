@@ -35,7 +35,7 @@ const EmbrePillCanvas = () => {
 
     return (
         <Canvas
-            style={{width:"20vw", height:"20vh"}}
+            style={{width:"25vw", height:"40vh"}}
             frameloop="demand"
             shadows
             dpr={[1, 2]}

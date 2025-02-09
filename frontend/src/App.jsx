@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import EmbreChat from "./pages/EmbreChat";
 import Map from "./pages/Map";
 import ClinicFinder from "./pages/ClinicFinder";
 import Navbar from "./components/nav-bar";
@@ -22,6 +23,7 @@ const App = () => {
               <Route path="/" element={<Home />} />
               <Route path="/map" element={<Map />} />
               <Route path="/clinics" element={<ClinicFinder />} />
+              <Route path="/chat" element={<EmbreChat/>}/>
             </Routes>
           </main>
         </Router>
