@@ -2,9 +2,10 @@ import { Suspense, useEffect, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
 import CanvasLoader from './Loader';
+import '../style.css';
 
 const EmbrePill = () => {
-    const embre = useGLTF("/models/embrepill.glb"); // ✅ Fixed model path
+    const embre = useGLTF("/models/emepill.glb"); // ✅ Fixed model path
 
     return (
         <group>
@@ -34,12 +35,13 @@ const EmbrePillCanvas = () => {
     }, []); // ✅ Fixed infinite loop
 
     return (
+        <div className={'embre-in-action'}>
         <Canvas
             style={{width:"25vw", height:"40vh"}}
             frameloop="demand"
             shadows
             dpr={[1, 2]}
-            camera={{ position: [5,10,25], fov: 25 }}
+            camera={{ position: [20,10,25], fov: 25 }}
             gl={{ preserveDrawingBuffer: true }}
         >
             {/* eslint-disable-next-line react/no-unknown-property */}
@@ -57,6 +59,7 @@ const EmbrePillCanvas = () => {
 
             <Preload all />
         </Canvas>
+        </div>
     );
 };
 

@@ -48,11 +48,45 @@ a:hover {
   color: var(--light-pink);
 }
 
+body {
+  margin: 0;
+  display: flex;
+  font-family: "GelicaExtraLight";
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+h1 {
+  background-color: #1F0322;
+  padding: 5vh 5vh;
+  border-radius: 5vh; 
+  display: inline-block;
+  font-size: 2.75em;
+  font-family: "GelicaBlack";
+  line-height: 1;
+  letter-spacing: .2vh;
+
+}
+h2 {
+  color: #1f0322;
+  font-size: 1.2em;
+  font-family: "GelicaBold";
+  place-items: center;
+  max-width: 80vw;
+}
+
+h3{
+  color: var(--dark-purple);
+
+}
+
 .home-page-text{
   color: #1F0322;
-  padding: .05em;
+  padding: 0.vh;
   font-family: "GelicaRegular";
-  font-size: 1.2em;
+  font-size: 1em;
   max-width: 60vw;
 }
 
@@ -94,9 +128,6 @@ button {
   opacity: 0;
   pointer-events: none;
 }
-
-
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';

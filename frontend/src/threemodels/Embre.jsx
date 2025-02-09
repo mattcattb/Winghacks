@@ -4,7 +4,7 @@ import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
 import CanvasLoader from './Loader';
 
 const Embre = () => {
-    const embre = useGLTF("/models/embrehome.glb"); // ✅ Fixed model path
+    const embre = useGLTF("/models/eme.glb"); // ✅ Fixed model path
 
     return (
         <group>
@@ -39,7 +39,7 @@ const EmbreCanvas = () => {
             frameloop="demand"
             shadows
             dpr={[1, 2]}
-            camera={{ position: [50,10,25], fov: 25 }}
+            camera={{ position: [10,20,25], fov: 20 }}
             gl={{ preserveDrawingBuffer: true }}
         >
             {/* eslint-disable-next-line react/no-unknown-property */}

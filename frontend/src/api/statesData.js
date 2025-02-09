@@ -2,7 +2,7 @@ import axiosClient from "./axiosClient"
 
 export const getAllStatesData = async () => {
   try {
-    const res = await axiosClient.get('stateData/');
+    const res = await axiosClient.get('stateData');
     console.log(`Response to get all states: ${JSON.stringify(res)}`)
     return res.data.statesData;
 
@@ -14,7 +14,7 @@ export const getAllStatesData = async () => {
 
 export const getStateData = async (abbr) => {
   try {
-    const res = await axiosClient.get('stateData/', {
+    const res = await axiosClient.get('stateData', {
       params: {abbr: abbr}
     })
     return res.data.stateData
