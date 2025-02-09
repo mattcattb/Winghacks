@@ -55,13 +55,34 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  overflow-y: auto;
 }
 
 h1 {
-  font-size: 3.2em;
+  background-color: #1F0322;
+  padding: 6vh 6vh; /* Add padding around the text */
+  border-radius: 5vh; /* Optional: Rounded corners */
+  display: inline-block;
+  font-size: 5em;
   font-family: "GelicaBlack";
-  line-height: 1.1;
+  line-height: .5;
 
+}
+h2 {
+  color: #1f0322;
+  font-size: 2.0em;
+  margin-bottom: 0.1em;
+  font-family: "GelicaBold";
+  place-items: center;
+  max-width: 80vw;
+}
+
+.home-page-text{
+  color: #1F0322;
+  padding: .05em;
+  font-family: "GelicaRegular";
+  font-size: 1.2em;
+  max-width: 60vw;
 }
 
 button {
