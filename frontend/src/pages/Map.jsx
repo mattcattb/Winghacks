@@ -50,7 +50,7 @@ function Map() {
   }, [selectedState]); // This makes the effect run when selectedState changes
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="font-custom flex flex-col items-center mt-5 justify-center min-h-screen bg-gradient-to-r from-light-purple to-light-pink font-gelica-extra-light overflow-y-auto md:px-0"> 
       <div className="map-header py-16 text-center mt-5">
       <h1 className="bg-[#1F0322] px-[6vh] py-[6vh] rounded-[5vh] inline-block text-[3em] font-gelica-black leading-[0.5]">
         Find resources for your state.

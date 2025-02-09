@@ -3,20 +3,20 @@ import { Link } from "react-router-dom";
 
 function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-light-purple to-light-pink font-gelica-extra-light overflow-y-auto px-4 md:px-0"> {/* Added responsive padding */}
+    <div className="font-custom flex flex-col items-center mt-5 mx-[20px] justify-center min-h-screen bg-gradient-to-r from-light-purple to-light-pink font-gelica-extra-light overflow-y-auto px-4 md:px-0"> {/* Added responsive padding */}
       <h1 className="bg-[#1F0322] px-8 py-8 rounded-[5vh] inline-block text-4xl md:text-5xl font-gelica-black leading-tight text-center"> {/* Improved responsiveness and text centering */}
         Plan your care.
       </h1>
 
-      <div className="landing-container max-w-3xl mx-auto text-center mt-12"> {/* Increased max-width */}
-        <h2 className="text-purple-700 text-3xl md:text-3xl font-gelica-bold leading-relaxed "> {/* Improved responsiveness and leading */}
+      <div className="landing-container max-w-3xl  text-center mt-12"> {/* Increased max-width */}
+        <h2 className="text-[#1F0322] text-3xl md:text-3xl font-gelica-bold leading-relaxed "> {/* Improved responsiveness and leading */}
           Our mission is to universalize access to clear and comprehensive
           information on abortion and reproductive healthcare across the United
           States.
         </h2>
       </div>
 
-      <div className="home-page-embre mt-16 md:mt-24"> {/* Increased margin-top for larger screens */}
+      <div className="home-page-embre mt-16 md:mt-24 flex justify-end ml-5"> {/* Added flex and justify-end */}
           <Link to = '/chat'>
             <EmbreCanvas/>
           </Link>
@@ -35,7 +35,7 @@ function Home() {
         </p>
       </div>
 
-      <footer className="mt-20 md:mt-32 w-full bg-alice-blue py-12 px-6 md:px-12 rounded-lg"> {/* Improved spacing and background */}
+      <footer className="mt-20 md:mt-32 w-auto bg-alice-blue py-12 px-6 md:px-12 bg-white rounded-3xl"> {/* Improved spacing and background */}
         <div className="references max-w-3xl mx-auto flex flex-col md:flex-row justify-between"> {/* Improved layout for larger screens */}
           <div className="md:w-1/2"> {/* Added width for larger screens */}
             <h3 className="text-purple-800 font-semibold mb-4 text-xl">References:</h3> {/* Improved margin-bottom and text size */}

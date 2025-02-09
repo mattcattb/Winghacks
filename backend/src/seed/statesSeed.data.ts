@@ -142,7 +142,7 @@ export const statesArray: StateData[] = [
     name: "Arkansas",
     restrictionLevel: 5,
     restrictionFacts: [
-        "Alaska's policies bans abortion.",
+        "Arkansas's policies bans abortion.",
         "There is one exception in cases to protect the mother.",
         "Enforces a total abortion ban."
     ],
@@ -213,7 +213,7 @@ export const statesArray: StateData[] = [
         "Iowa maintains targeted regulation for abortion providers laws"
     ],
     weeksBan: 6, // Or whatever the limit is
-    abbr: "ID"
+    abbr: "IA"
   },
   {
     name: "Kansas",
@@ -232,7 +232,7 @@ export const statesArray: StateData[] = [
     restrictionFacts: [
         "Kentucky's policies bans abortion.",
         "Civil and criminal penalties",
-        "Indiana maintains targeted regulation for abortion providers laws."
+        "Kentucky maintains targeted regulation for abortion providers laws."
     ],
     weeksBan: 0, // Or whatever the limit is
     abbr: "KY"
@@ -241,7 +241,7 @@ export const statesArray: StateData[] = [
     name: "Louisiana",
     restrictionLevel: 5,
     restrictionFacts: [
-        "Kentucky's policies bans abortion.",
+        "Louisiana's policies bans abortion.",
         "Civil and criminal penalties",
         "Louisiana limits public funding."
     ],
@@ -301,7 +301,72 @@ export const statesArray: StateData[] = [
         "Constitutional protections for abortion."
     ],
     weeksBan: 40, // Or whatever the limit is
-    abbr: "MI"
+    abbr: "MN"
+  },
+  {
+    name: "Mississippi",
+    restrictionLevel: 5,
+    restrictionFacts: [
+        "Mississippi's policies bans abortion.",
+        "Civil and criminal penalties",
+        "Mississippi maintains targeted regulation for abortion providers laws"
+    ],
+    weeksBan: 0, // Or whatever the limit is
+    abbr: "MS"
+  },
+  {
+    name: "Missouri",
+    restrictionLevel: 2,
+    restrictionFacts: [
+        "Originally enforcing trigger ban, Missouri recently determined it was unconstitutional",
+        "Approved amendments that recognize reproductive freedoms",
+        "Missouri maintains targeted regulation for abortion providers laws"
+    ],
+    weeksBan: 24, // Or whatever the limit is
+    abbr: "MO"
+  },
+  {
+    name: "Montana",
+    restrictionLevel: 2,
+    restrictionFacts: [
+        "Abortion remains legal in Montana",
+        "Montana has constitutional protections for abortion",
+        "Montana maintains targeted regulation for abortion providers laws"
+    ],
+    weeksBan: 15, // Or whatever the limit is
+    abbr: "MT"
+  },
+  {
+    name: "Nebraska",
+    restrictionLevel: 4,
+    restrictionFacts: [
+        "Enforces a 12 week abortion ban",
+        "Rejected amendments that protected abortions",
+        "Nebraska maintains targeted regulation for abortion providers laws"
+    ],
+    weeksBan: 12, // Or whatever the limit is
+    abbr: "NE"
+  },
+  {
+    name: "Nevada",
+    restrictionLevel: 2,
+    restrictionFacts: [
+        "Abortion remains legal in Nevada",
+        "Nevada limits public funding for abortion",
+        "Nevada law has expressed protections for abortion."
+    ],
+    weeksBan: 24, // Or whatever the limit is
+    abbr: "NV"
+  },
+  {
+    name: "New Hampshire",
+    restrictionLevel: 3,
+    restrictionFacts: [
+        "Abortion remains accessible but without protection",
+        "New Hampshire maintains targeted regulation for abortion providers laws"
+    ],
+    weeksBan: 24, // Or whatever the limit is
+    abbr: "NH"
   },
   {
     name: "New Jersey",
@@ -320,7 +385,7 @@ export const statesArray: StateData[] = [
     restrictionFacts: [
         "Abortion remains accessible",
         "New Mexico courts have not decided on whether the state will portect abortion.",
-        "Indiana maintains targeted regulation for abortion providers laws"
+        "New Mexico maintains targeted regulation for abortion providers laws"
     ],
     weeksBan: 40, // Or whatever the limit is
     abbr: "NM"

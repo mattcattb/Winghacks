@@ -67,7 +67,7 @@ const ClinicFinder = () => {
   };
 
   return (
-    <div className="flex flex-col w-full justify-start mt-11 ">
+    <div className="flex flex-col w-full justify-start mt-11">
       <h2 className="text-5xl m-5 text-fuchsia-950 font-bold">Find Clinics Near You</h2>
       <div className="flex flex-col w-[1300px] gap-7 justify-center">
         <PlaceAutocompleteClassic onPlaceSelect={handlePlaceSelect} />
@@ -114,13 +114,13 @@ const ClinicFinder = () => {
           </Map>
         </div>
 
-        <div className="flex flex-col p-5 bg-gray-100 rounded-lg shadow-lg w-[300px] h-auto overflow-y-auto">
-          <h3 className="text-xl font-semibold mb-4 text-black">Nearby Clinics</h3>
-          <ul className="flex flex-row space-y-2 items-center text-center">
+        <div className="bg-white rounded-lg shadow-md w-full h-auto m-5 p-6"> {/* Container - changed background, padding, margin */}
+          <h3 className="text-xl font-semibold mb-3 text-gray-900">Nearby Clinics</h3> {/* Title - adjusted margin and color */}
+          <ul className="space-y-3"> {/* Vertical spacing for list items, removed flex-row, items-center, text-center */}
             {nearClinics.map((clinic) => (
               <li
                 key={clinic._id}
-                className="text-lg text-gray-800"
+                className="text-gray-700 py-2 px-4 rounded-md hover:bg-gray-50 cursor-pointer"
                 onClick={() => handleMarkerClick(clinic)}
               >
                 {clinic.name}

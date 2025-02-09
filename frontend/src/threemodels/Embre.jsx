@@ -35,7 +35,7 @@ const EmbreCanvas = () => {
 
     return (
         <Canvas
-            style={{width:"auto", height:"35vh", display:"flex",margin:"auto", float:"left", alignContent:"left"}}
+            style={{width:"auto", height:"100vh", display:"flex",margin:"auto", float:"left", alignContent:"left"}}
             frameloop="demand"
             shadows
             dpr={[1, 2]}
