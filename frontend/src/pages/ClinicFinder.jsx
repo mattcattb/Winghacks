@@ -1,13 +1,17 @@
-import React, { useEffect, useState, useRef, useCallback } from "react";
+import React, { useEffect, useState, useRef, useCallback } from "react"; // useMemo removed as not currently needed
 import { getNearbyClinics, getAllClinics } from "../api/clinic";
 import { Map, Marker, InfoWindow } from "@vis.gl/react-google-maps";
 import { PlaceAutocompleteClassic } from "../components/PlaceAutocomplete";
 
 const ClinicFinder = () => {
+  const defaultCenter = { lat: 39.8283, lng: -98.5795 };
+  const defaultZoomLevel = 4; // Define a constant for default zoom
+
   const [selectedPlace, setSelectedPlace] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [zoom, setZoom] = useState(4)
+  const [zoom, setZoom] = useState(defaultZoomLevel); // Use defaultZoomLevel
+  const [mapCenter, setMapCenter] = useState(defaultCenter);
 
   const [activeClinic, setActiveClinic] = useState(null);
   const [nearClinics, setNearClinics] = useState([]);
@@ -41,6 +45,9 @@ const ClinicFinder = () => {
     const lat = place.geometry.location.lat();
     const lng = place.geometry.location.lng();
 
+    setMapCenter({ lat, lng });
+    setZoom(13); // Consistent zoom level for place selection and marker click
+
     setLoading(true);
     try {
       const clinicsData = await getNearbyClinics(lat, lng);
@@ -53,37 +60,15 @@ const ClinicFinder = () => {
     }
   };
 
-
   const handleMarkerClick = (clinic) => {
     setActiveClinic(clinic);
-    if (mapRef.current) {
-      const map = mapRef.current()
-      map.setZoom(10)
-      map.panTo({ lat: clinic.lat, lng: clinic.lng })
-    }
-  }
+    setZoom(13); // Consistent zoom level
+    setMapCenter({ lat: clinic.lat, lng: clinic.lng });
+  };
 
-  const defaultCenter = { lat: 39.8283, lng: -98.5795 };
-  const center = activeClinic
-    ? { lat: activeClinic.lat, lng: activeClinic.lng }
-    : defaultCenter;
-
-
-  const onMapLoad = useCallback(function callback(map){
-    if(mapRef.current){
-      mapRef.current.setZoom(10)
-    }
-  }, [])
-
-  const onCenterChange = useCallback(function callback(map) {
-    if (mapRef.current) {
-      mapRef.current.setZoom(10); // Set zoom when center changes
-    }
-  }, []);  
-    
   return (
     <div className="flex flex-col w-full justify-start mt-11 ">
-      <h2 className="text-5xl m-5">Find Clinics Near You</h2>
+      <h2 className="text-5xl m-5 text-fuchsia-950 font-bold">Find Clinics Near You</h2>
       <div className="flex flex-col w-[1300px] gap-7 justify-center">
         <PlaceAutocompleteClassic onPlaceSelect={handlePlaceSelect} />
         {error && <p style={{ color: "red" }}>{error}</p>}
@@ -92,12 +77,20 @@ const ClinicFinder = () => {
         <div>
           <Map
             style={{ width: "100%", height: "600px" }}
-            defaultCenter={center}
+            center={mapCenter}
+            zoom={zoom}
+            // defaultCenter prop removed - using initial mapCenter state
             scrollwheel={true}
-            defaultZoom={4}
-            onLoad={onMapLoad}
-            onCenterChanged={onCenterChange}
-            onZoomChanged={(e) => setZoom(e.target.getZoom())} 
+            defaultZoom={defaultZoomLevel} // Use defaultZoomLevel constant
+            reuseMaps={true}
+            onCenterChanged={(map) => setMapCenter(map.detail.center)} // Can destructure here if desired
+            onZoomChanged={(map) => setZoom(map.detail.zoom)}       // Can destructure here if desired
+            options={{
+              gestureHandling: "greedy",
+              draggable: true,
+            }}
+            ref={mapRef}
+            mapId={"f581f64e2de5941c"}
           >
             {allClinics.map((clinic) => (
               <Marker
@@ -111,8 +104,8 @@ const ClinicFinder = () => {
             {activeClinic && (
               <InfoWindow
                 position={{ lat: activeClinic.lat, lng: activeClinic.lng }}
-                defaultZoom={5}
-                onCloseClick={() => setActiveClinic(null)}>
+                onCloseClick={() => setActiveClinic(null)}
+              >
                 <div>
                   <h3 className="text-black">{activeClinic.name}</h3>
                 </div>
@@ -128,7 +121,8 @@ const ClinicFinder = () => {
               <li
                 key={clinic._id}
                 className="text-lg text-gray-800"
-                onClick={() => handleMarkerClick(clinic)}>
+                onClick={() => handleMarkerClick(clinic)}
+              >
                 {clinic.name}
               </li>
             ))}

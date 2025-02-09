@@ -20,12 +20,12 @@ export default function EmbreChat(){
 
     const handleStateSelect =(selectedValue) =>{
         console.log(selectedValue);
- 
+
         setState(selectedValue); //passes in an abbriviation
-    
+
     }
-    
-    
+
+
     const handleWeeks = (label, item) =>{
         setWeeks(item.label);
     }
@@ -36,7 +36,7 @@ export default function EmbreChat(){
         if (showBubble === 3) {
             const { data, aborMess } = questionLogic(state, weeks);
             setMatchedState(data);
-            setAborMess(aborMess); 
+            setAborMess(aborMess);
             console.log(aborMess)
         }
     };
@@ -48,16 +48,16 @@ export default function EmbreChat(){
     //         setMatchedState(data); // Store the matched state data
     //         setAborMess(aborMess); // Set the abortion message
     //     }
-    // }, [state, weeks]); 
-    
-    return <div>
-        <div className= "phone-container">
-            <img src={phone} alt="phone" className='phone'/>
-            <div className={`bubble-container ${ showBubble==  0 ? "fade-in" :"fade-out"}`}>
-                <div className="bubble-left">
+    // }, [state, weeks]);
+
+    return <div className="flex flex-row-reverse"> {/* You might want to Tailwind-ify EmbreChat's positioning later if needed */}
+            <div className="phone-container relative w-full max-w-[440px] h-[800px] mx-auto">
+              <img src={phone} alt="phone" className='phone w-full h-auto'/>
+            <div className={`bubble-container absolute top-[20%] left-0 right-0 w-[240px] translate-x-[42%] flex flex-col items-start justify-start gap-2.5 transition-opacity duration-500 ease-out transition-transform duration-500 ease-out ${ showBubble==  0 ? "fade-in" :"fade-out"}`}>
+                <div className="bubble-left max-w-[40%] p-2.5 px-5 bg-[#F4D7E3] text-black rounded-xl text-base break-words ml-2.5 mr-2.5 self-start">
                     Hello! I hope you are doing well. Please select what state you are in so I can help you!
                 </div>
-                <div className="bubble-right">
+                <div className="bubble-right max-w-[40%] p-2.5 px-5 bg-[#F4D7E3] text-black rounded-xl text-base break-words ml-2.5 mr-2.5 self-end">
                     <InputPicker data={[
                         {label: 'Alabama', value: 'AL'},
                         {label: 'Alaska', value: 'AK'},
@@ -109,33 +109,33 @@ export default function EmbreChat(){
                         {label: 'West Virginia', value: 'WV'},
                         {label: 'Wisconsin', value: 'WI'},
                         {label: 'Wyoming', value: 'WY'},
-                        ]} 
+                    ]}
                         value={state}
                         onChange={handleStateSelect}
-                        
-                        />
-                </div>
-                <button onClick= {handleNextStep}>:D</button>
-            </div> 
-            <div className={`bubble-container ${showBubble ==1 ? "fade-in" : "fade-out"}`} >
-                <div className='bubble-left'>
-                    Thank you! Now, if you don't mind me asking, how many weeks ago was your last period?
-                </div>
-                <div className='bubble-right'>
-                    <InputNumber 
-                    max={30}
-                    onChange={handleWeeks}
+
                     />
                 </div>
-                <button onClick= {handleNextStep} style={{"marginTop": "10%"}}>:D</button>
-            </div> 
-            <div className={`bubble-container ${showBubble == 2 ? 'fade-in' : 'fade-out'}`}>  
-                    <div className='bubble-left'>
-                        {aborMess}
-                    </div>
+                <button onClick= {handleNextStep}>:D</button>
+            </div>
+            <div className={`bubble-container absolute top-[20%] left-0 right-0 w-[240px] translate-x-[42%] flex flex-col items-start justify-start gap-2.5 transition-opacity duration-500 ease-out transition-transform duration-500 ease-out ${showBubble ==1 ? "fade-in" : "fade-out"}`} >
+                <div className='bubble-left max-w-[40%] p-2.5 px-5 bg-[#F4D7E3] text-black rounded-xl text-base break-words ml-2.5 mr-2.5 self-start'>
+                    Thank you! Now, if you don't mind me asking, how many weeks ago was your last period?
+                </div>
+                <div className='bubble-right max-w-[40%] p-2.5 px-5 bg-[#F4D7E3] text-black rounded-xl text-base break-words ml-2.5 mr-2.5 self-end'>
+                    <InputNumber
+                        max={30}
+                        onChange={handleWeeks}
+                    />
+                </div>
+                <button onClick= {handleNextStep} className="mt-[10%]">:D</button>
+            </div>
+            <div className={`bubble-container absolute top-[20%] left-0 right-0 w-[240px] translate-x-[42%] flex flex-col items-start justify-start gap-2.5 transition-opacity duration-500 ease-out transition-transform duration-500 ease-out ${showBubble == 2 ? 'fade-in' : 'fade-out'}`}>
+                <div className='bubble-left max-w-[40%] p-2.5 px-5 bg-[#F4D7E3] text-black rounded-xl text-base break-words ml-2.5 mr-2.5 self-start'>
+                    {aborMess}
+                </div>
             </div>
         </div>
-        <EmbreCanvas className="EmbreChat"/>
+        <EmbreCanvas className="EmbreChat"/> {/* You might want to Tailwind-ify EmbreCanvas's positioning later if needed */}
     </div>
 
 
