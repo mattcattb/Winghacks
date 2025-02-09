@@ -18,26 +18,11 @@
     "@types/react-dom": "^18.3.5",
     "framer-motion": "^12.4.1",
     "maath": "^0.10.8",
-<<<<<<< HEAD
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-leaflet": "^4.2.1",
-    "@vis.gl/react-google-maps": "^1.5.1",
-    "axios": "^1.7.9",
-    "dotenv": "^16.4.7",
-    "framer-motion": "^12.4.1",
-    "maath": "^0.10.8",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-geocoding": "^4.0.0",
-    "react-router-dom": "^7.1.5",
-=======
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-leaflet": "^4.2.1",
     "react-router-dom": "^7.1.5",
     "react-simple-maps": "^3.0.0",
->>>>>>> 2c6457ff (yeah)
     "react-tilt": "^1.0.2",
     "react-vertical-timeline-component": "^3.5.3",
     "rsuite": "^5.77.1"

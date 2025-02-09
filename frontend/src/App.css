@@ -49,19 +49,10 @@ path:hover{
 }
 
 .phone-container {
-<<<<<<< HEAD
-  height: 50vh; /* Adjust to the height of your phone SVG */
-  background-color: beige;
-  margin: 25% auto;
-  width: 35vw;
-  border-radius: 8px;
-  display: flex;
-=======
   position: relative;
   width: 440px; 
   height: 800px; /* Adjust to the height of your phone SVG */
   margin: 0 auto;
->>>>>>> 4e490c033d548f2df6f27c59af9f53ca73e16f71
 }
 
 .bubble-container{
@@ -134,13 +125,9 @@ path:hover{
   100% {
     top: -15px;
   }
-<<<<<<< HEAD
 }
 
 /* Ensure Tailwind CSS is installed and configured correctly */
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-=======
-}
->>>>>>> 4e490c033d548f2df6f27c59af9f53ca73e16f71

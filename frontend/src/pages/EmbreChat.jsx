@@ -22,7 +22,6 @@ export default function EmbreChat(){
         console.log(selectedValue);
 
         setState(selectedValue); //passes in an abbriviation
-<<<<<<< HEAD
     
     };
     
@@ -33,15 +32,6 @@ export default function EmbreChat(){
             setWeeks(value);  // Store the selected number
         }
     };
-=======
-
-    }
-
-
-    const handleWeeks = (label, item) =>{
-        setWeeks(item.label);
-    }
->>>>>>> 4e490c033d548f2df6f27c59af9f53ca73e16f71
 
     const handleNextStep = () => {
         setBubble(prevStep => prevStep + 1);
@@ -61,22 +51,12 @@ export default function EmbreChat(){
     //         setMatchedState(data); // Store the matched state data
     //         setAborMess(aborMess); // Set the abortion message
     //     }
-<<<<<<< HEAD
     // }, [state, weeks]); 
     
     return <div>
         <div className= "phone-container">
             <div className={`bubble-container ${ showBubble ===  0 ? "fade-in" :"fade-out"}`}>
                 <div className="bubble-left">
-=======
-    // }, [state, weeks]);
-
-    return <div className="flex flex-row-reverse"> {/* You might want to Tailwind-ify EmbreChat's positioning later if needed */}
-            <div className="phone-container relative w-full max-w-[440px] h-[800px] mx-auto">
-              <img src={phone} alt="phone" className='phone w-full h-auto'/>
-            <div className={`bubble-container absolute top-[20%] left-0 right-0 w-[240px] translate-x-[42%] flex flex-col items-start justify-start gap-2.5 transition-opacity duration-500 ease-out transition-transform duration-500 ease-out ${ showBubble==  0 ? "fade-in" :"fade-out"}`}>
-                <div className="bubble-left max-w-[40%] p-2.5 px-5 bg-[#F4D7E3] text-black rounded-xl text-base break-words ml-2.5 mr-2.5 self-start">
->>>>>>> 4e490c033d548f2df6f27c59af9f53ca73e16f71
                     Hello! I hope you are doing well. Please select what state you are in so I can help you!
                 </div>
                 <div className="bubble-right max-w-[40%] p-2.5 px-5 bg-[#F4D7E3] text-black rounded-xl text-base break-words ml-2.5 mr-2.5 self-end">
@@ -134,7 +114,6 @@ export default function EmbreChat(){
                     ]}
                         value={state}
                         onChange={handleStateSelect}
-<<<<<<< HEAD
                         
                         />
                 </div>
@@ -156,29 +135,6 @@ export default function EmbreChat(){
                     <div className='bubble-left'>
                         {aborMess}
                     </div>
-=======
-
-                    />
-                </div>
-                <button onClick= {handleNextStep}>:D</button>
-            </div>
-            <div className={`bubble-container absolute top-[20%] left-0 right-0 w-[240px] translate-x-[42%] flex flex-col items-start justify-start gap-2.5 transition-opacity duration-500 ease-out transition-transform duration-500 ease-out ${showBubble ==1 ? "fade-in" : "fade-out"}`} >
-                <div className='bubble-left max-w-[40%] p-2.5 px-5 bg-[#F4D7E3] text-black rounded-xl text-base break-words ml-2.5 mr-2.5 self-start'>
-                    Thank you! Now, if you don't mind me asking, how many weeks ago was your last period?
-                </div>
-                <div className='bubble-right max-w-[40%] p-2.5 px-5 bg-[#F4D7E3] text-black rounded-xl text-base break-words ml-2.5 mr-2.5 self-end'>
-                    <InputNumber
-                        max={30}
-                        onChange={handleWeeks}
-                    />
-                </div>
-                <button onClick= {handleNextStep} className="mt-[10%]">:D</button>
-            </div>
-            <div className={`bubble-container absolute top-[20%] left-0 right-0 w-[240px] translate-x-[42%] flex flex-col items-start justify-start gap-2.5 transition-opacity duration-500 ease-out transition-transform duration-500 ease-out ${showBubble == 2 ? 'fade-in' : 'fade-out'}`}>
-                <div className='bubble-left max-w-[40%] p-2.5 px-5 bg-[#F4D7E3] text-black rounded-xl text-base break-words ml-2.5 mr-2.5 self-start'>
-                    {aborMess}
-                </div>
->>>>>>> 4e490c033d548f2df6f27c59af9f53ca73e16f71
             </div>
         </div>
         <EmbreCanvas className="EmbreChat"/> {/* You might want to Tailwind-ify EmbreCanvas's positioning later if needed */}
