@@ -1,8 +1,9 @@
-# React + Vite
+# PLAN YOUR CARE.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Our mission is to universalize access to clear and comprehensive information on abortion and reproductive healthcare across the United States
+          
+Regardless of geography, identity, or circumstance, we believe that everyone deserves the right to make informed decisions about their own bodies. We strive to output reliable information, provide access to medical resources, and maintain a supportive community.
 
-Currently, two official plugins are available:
+**Reproductive rights are not just a privilege, but a universal reality.**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Our universal resource consists of credible resources, interactive UI map, chat bot, and local clinic locator.
