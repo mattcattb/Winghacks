@@ -51,7 +51,7 @@ function Map() {
   return (
     <div className="flex flex-col min-h-screen">
       <div className="map-header py-16 text-center mt-5">
-        <h1 className="text-6xl md:text-8xl font-bold">
+        <h1 className="text-3xl md:text-8xl font-bold">
           Find resources for your state.
         </h1>
       </div>
