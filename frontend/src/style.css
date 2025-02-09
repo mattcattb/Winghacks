@@ -41,3 +41,11 @@ nav a {
     
 }
 
+.embre-in-action{
+    width:100vw;
+    height: 100vh;
+    left:-37vw;
+    display:flex;
+    bottom: -10vh;
+    position:absolute;
+}
