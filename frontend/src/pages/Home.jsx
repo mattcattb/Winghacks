@@ -1,4 +1,6 @@
 import EmbreCanvas from "../threemodels/Embre.jsx";
+import speech from '../assets/speech-bubble-message.svg';
+
 import { Link } from 'react-router-dom';
 function Home() {
 
@@ -12,7 +14,7 @@ function Home() {
         <div className="home-page-embre">
             <Link to = '/chat'>
             <EmbreCanvas/>
-            </Link>
+            </Link>            
         </div>
         <div className="home-page-text">
             <p>Regardless of geography, identity, or circumstance, we believe that everyone deserves the right 
@@ -20,7 +22,7 @@ function Home() {
                 medical resources, and a maintain a supportive community. 
 
             </p>
-            <p>Reproductive rights are not just a privilege, but a universal reality.</p>
+            <p>Reproductive rights are not just a privilege, but a universal reality. Don't know where to begin? Click on our friend Emmy!</p>
         </div>
         <footer>
         <div className="refrences">
