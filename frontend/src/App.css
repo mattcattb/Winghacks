@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -114,3 +118,4 @@ path:hover{
   flex-direction: column;
   border-radius: 10px;
 }
+
