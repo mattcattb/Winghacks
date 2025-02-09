@@ -1,10 +1,8 @@
-import {StateData} from '../types/state'
-
+import {StateData} from '../types/state.js';
 
 const statesArray: StateData[] = [
   {
     name: "Florida",
-
     restrictionLevel: 4,
     restrictionFacts: [
       "Florida has a 6-week abortion ban.",
@@ -120,7 +118,7 @@ const statesArray: StateData[] = [
     name: "Alabama",
     restrictionLevel: 5,
     restrictionFacts: [
-        "Alabama's policies bans abortion.",
+        "Alabama's policies ban abortion.",
         "There is one exception in cases to protect the mother.",
         "Enforces a total abortion ban."
     ],
@@ -142,7 +140,7 @@ const statesArray: StateData[] = [
     name: "Arkansas",
     restrictionLevel: 5,
     restrictionFacts: [
-        "Alaska's policies bans abortion.",
+        "Alaska's policies ban abortion.",
         "There is one exception in cases to protect the mother.",
         "Enforces a total abortion ban."
     ],
@@ -170,160 +168,6 @@ const statesArray: StateData[] = [
     ],
     weeksBan: 24, // Or whatever the limit is
     abbr: "DE"
-  },
-  {
-    name: "Hawaii",
-    restrictionLevel: 1,
-    restrictionFacts: [
-        "Abortion remains legal in Hawaii",
-        "State laws protect abortion",
-        "Hawaii provides funding for abortion care."
-    ],
-    weeksBan: 24, // Or whatever the limit is
-    abbr: "HI"
-  },
-  {
-    name: "Idaho",
-    restrictionLevel: 5,
-    restrictionFacts: [
-        "Idaho's policies bans abortion.",
-        "There are exception in cases to protect the mother and/or cases of rape and incest",
-        "Idaho Supreme Court stated that access to abortion is not a fundamental right in their state constitution"
-    ],
-    weeksBan: 40, // Or whatever the limit is
-    abbr: "ID"
-  },
-  {
-    name: "Indiana",
-    restrictionLevel: 5,
-    restrictionFacts: [
-        "Indiana's policies bans abortion.",
-        "There are exception in cases to protect the mother and/or cases of rape and incest",
-        "Indiana maintains targeted regulation for abortion providers laws"
-    ],
-    weeksBan: 40, // Or whatever the limit is
-    abbr: "IN"
-  },
-  {
-    name: "Iowa",
-    restrictionLevel: 4,
-    restrictionFacts: [
-        "Currently, Iowa is heading towards a total abortion ban.",
-        "Iowa limits public funding",
-        "Iowa maintains targeted regulation for abortion providers laws"
-    ],
-    weeksBan: 6, // Or whatever the limit is
-    abbr: "ID"
-  },
-  {
-    name: "Kansas",
-    restrictionLevel: 2,
-    restrictionFacts: [
-        "Currently, abortion remains legal.",
-        "There are many restrictions, but the highest court decided on it is the choice of the mother is protected.",
-        "Kansas maintains targeted regulation for abortion providers laws"
-    ],
-    weeksBan: 22, // Or whatever the limit is
-    abbr: "KS"
-  },
-  {
-    name: "Kentucky",
-    restrictionLevel: 5,
-    restrictionFacts: [
-        "Kentucky's policies bans abortion.",
-        "Civil and criminal penalties",
-        "Indiana maintains targeted regulation for abortion providers laws."
-    ],
-    weeksBan: 0, // Or whatever the limit is
-    abbr: "KY"
-  },
-  {
-    name: "Louisiana",
-    restrictionLevel: 5,
-    restrictionFacts: [
-        "Kentucky's policies bans abortion.",
-        "Civil and criminal penalties",
-        "Louisiana limits public funding."
-    ],
-    weeksBan: 0, // Or whatever the limit is
-    abbr: "LA"
-  },
-  {
-    name: "Maine",
-    restrictionLevel: 2,
-    restrictionFacts: [
-        "Abortion remains legal in Maine",
-        "As of 2023, abortion care post 24 weeks is allowed depending on physician",
-        "Maine expresses numerous protections for abortion."
-    ],
-    weeksBan: 24, // Or whatever the limit is
-    abbr: "ME"
-  },
-  {
-    name: "Maryland",
-    restrictionLevel: 1,
-    restrictionFacts: [
-        "Abortion remains legal in Maryland",
-        "Parental notification is required regarding cases for minors",
-        "Maryland expresses numerous protections for abortion."
-    ],
-    weeksBan: 40, // Or whatever the limit is
-    abbr: "MD"
-  },
-  {
-    name: "Massachusetts",
-    restrictionLevel: 2,
-    restrictionFacts: [
-        "Abortion remains legal in Massachusetts",
-        "Protects the right to abortion under its consititution",
-        "Constitutional protections for abortion."
-    ],
-    weeksBan: 24, // Or whatever the limit is
-    abbr: "MA"
-  },
-  {
-    name: "Michigan",
-    restrictionLevel: 2,
-    restrictionFacts: [
-        "Abortion remains legal in Michigan",
-        "Reduced barriers to abortion access and reproductive freedom",
-        "Constitutional protections for abortion."
-    ],
-    weeksBan: 40, // Or whatever the limit is
-    abbr: "MI"
-  },
-  {
-    name: "Minnesota",
-    restrictionLevel: 1,
-    restrictionFacts: [
-        "Abortion remains legal in Minnesota",
-        "Reduced barriers to abortion access and reproductive freedom",
-        "Constitutional protections for abortion."
-    ],
-    weeksBan: 40, // Or whatever the limit is
-    abbr: "MI"
-  },
-  {
-    name: "New Jersey",
-    restrictionLevel: 1,
-    restrictionFacts: [
-        "Abortion remains legal in New Jersey",
-        "Reduced barriers to abortion access and reproductive freedom",
-        "Constitutional protections for abortion."
-    ],
-    weeksBan: 40, // Or whatever the limit is
-    abbr: "NJ"
-  },
-  {
-    name: "New Mexico",
-    restrictionLevel: 3,
-    restrictionFacts: [
-        "Abortion remains accessible",
-        "New Mexico courts have not decided on whether the state will portect abortion.",
-        "Indiana maintains targeted regulation for abortion providers laws"
-    ],
-    weeksBan: 40, // Or whatever the limit is
-    abbr: "NM"
   },
   {
     name: "North Carolina",
@@ -484,6 +328,71 @@ const statesArray: StateData[] = [
     ],
     weeksBan: 20,
     abbr: "WI",
-  }
+  },
   
+  {
+    name: "Mississippi",
+    restrictionLevel: 5,
+    restrictionFacts: [
+        "Mississippi has a near-total abortion ban.",
+        "Exceptions are very limited and include: To save the pregnant person's life, to preserve the pregnant person's physical health, or if the fetus is not expected to survive the pregnancy",
+    ],
+    weeksBan: 0,
+    abbr: "MS",
+  },
+  {
+    name: "Missouri",
+    restrictionLevel: 3,
+    restrictionFacts: [
+        "There are no abortion providers in Missouri.",
+        "Abortion is legal until viability, which is typically around 24 weeks."
+    ],
+    weeksBan: 24,
+    abbr: "MO",
+  },
+  {
+    name: "Montana",
+    restrictionLevel: 1,
+    restrictionFacts: [
+        "Montana has strong protections for abortion rights.",
+        "Abortion is legal until viability, which is typically around 24 weeks.",
+        "Parental consent is required for minors",
+    ],
+    weeksBan: 24,
+    abbr: "MT",
+  },
+  {
+    name: "Nebraska",
+    restrictionLevel: 4,
+    restrictionFacts: [
+        "Nebraska has a 12-week abortion ban.",
+        "Parental consent required for minors",
+        "24 hour waiting period is required before an abortion can be performed",
+    ],
+    weeksBan: 12,
+    abbr: "NE",
+  },
+  {
+    name: "Nevada",
+    restrictionLevel: 2,
+    restrictionFacts: [
+        "Nevada has a 24-week abortion ban.",
+        "Parental consent required for minors",
+    ],
+    weeksBan: 24,
+    abbr: "NV",
+  },
+  {
+    name: "New Hampshire",
+    restrictionLevel: 2, 
+    restrictionFacts: [
+        "New Hampshire has a 23-week abortion ban.",
+        "Parental consent required for minors",
+    ],
+    weeksBan: 23,
+    abbr: "NH",
+  },
+
 ];
+
+export default statesArray;

@@ -63,9 +63,9 @@ h1 {
   padding: 6vh 6vh; /* Add padding around the text */
   border-radius: 5vh; /* Optional: Rounded corners */
   display: inline-block;
-  font-size: 5em;
+  font-size: 3em;
   font-family: "GelicaBlack";
-  line-height: .5;
+  line-height: 1;
 
 }
 h2 {
@@ -73,7 +73,7 @@ h2 {
   font-size: 2.4em;
   font-family: "GelicaBold";
   place-items: center;
-  max-width: 1000pxs;
+  max-width: 80vw;
 }
 
 .home-page-text{
@@ -81,7 +81,7 @@ h2 {
   padding: 30 px;
   font-family: "GelicaRegular";
   font-size: 1.75em;
-  max-width: 300 px;
+  max-width: 60vw;
 }
 
 button {

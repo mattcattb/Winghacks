@@ -5,7 +5,7 @@ const Navbar = () => {
         <nav className={"nav"}>
             <Link to="/" style={{color: "white", textDecoration: "none"}}>Home</Link>
             <Link to="/map" style={{color: "white", textDecoration: "none"}}>Map</Link>
-            <Link to="/contact" style={{color: "white", textDecoration: "none"}}>Hawk Tuah!</Link>
+            <Link to="/clinics" style={{color: "white", textDecoration: "none"}}>ClinicFinder</Link>
         </nav>
     )
 }
