@@ -20,15 +20,15 @@ export const getStateFill = (restrictionLevel) => {
 export const getRestrictionColor = (level) => {
   switch (level) {
     case 5:
-      return "text-red-700"; // Or bg-red-200 for background color
+      return "text-[#D52D00]"; // Or bg-red-200 for background color
     case 4:
-      return "text-orange-700";
+      return "text-[#EF7627]";
     case 3:
-      return "text-yellow-700";
+      return "text-[#FF9A56]";
     case 2:
-      return "text-green-700";
+      return "text-[#D162A4]";
     case 1:
-      return "text-blue-700";
+      return "text-[#B55690]";
     default:
       return "text-gray-700"; // Default color
   }
