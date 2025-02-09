@@ -31,7 +31,6 @@ function Map() {
     }
 
     loadAllStates()
-
   }, []);
 
   const handleClick = (stateId) => {
@@ -51,13 +50,13 @@ function Map() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <div className="map-header py-16 text-center">
-        <h1 className="text-6xl md:text-8xl font-bold text-gray-800">
+      <div className="map-header py-16 text-center mt-5">
+        <h1 className="text-6xl md:text-8xl font-bold">
           Find resources for your state.
         </h1>
       </div>
       <div className={"map-art"}>
-        <div className="map-container w-full h-[900px] flex flex-col justify-center">
+        <div className="map-container w-full h-[800px] flex flex-col justify-center">
           
         <div className="map-container w-full h-[900px] flex flex-col justify-center">
           {statesData.length > 0 && ( // Only render the SVG if statesData is loaded

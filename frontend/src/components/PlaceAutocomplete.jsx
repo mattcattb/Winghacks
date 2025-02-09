@@ -30,7 +30,7 @@ export const PlaceAutocompleteClassic = ({onPlaceSelect}) => {
 
   return (
     <div className="autocomplete-container">
-      <input ref={inputRef} />
+      <input className='text-black w-full p-2' ref={inputRef} />
     </div>
   );
 };
