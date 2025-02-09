@@ -4,7 +4,7 @@ import internal from "stream";
 
 export interface Clinic {
   name: string;
-  long: number;
+  lng: number;
   lat: number;
   state: string;
 }

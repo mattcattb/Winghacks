@@ -1,108 +1,136 @@
-import React, { useState, useEffect } from 'react';
-import { GoogleMap, useJsApiLoader, Marker, InfoWindow } from '@react-google-maps/api'; // Correct import
+import React, { useEffect, useState, useRef, useCallback } from "react"; // useMemo removed as not currently needed
+import { getNearbyClinics, getAllClinics } from "../api/clinic";
+import { Map, Marker, InfoWindow } from "@vis.gl/react-google-maps";
+import { PlaceAutocompleteClassic } from "../components/PlaceAutocomplete";
 
-const containerStyle = {
-  width: '400px',
-  height: '300px'
-};
+const ClinicFinder = () => {
+  const defaultCenter = { lat: 39.8283, lng: -98.5795 };
+  const defaultZoomLevel = 4; // Define a constant for default zoom
 
-const center = {
-  lat: 29.6519,
-  lng: -82.3250
-};
+  const [selectedPlace, setSelectedPlace] = useState(null);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [zoom, setZoom] = useState(defaultZoomLevel); // Use defaultZoomLevel
+  const [mapCenter, setMapCenter] = useState(defaultCenter);
 
-const GOOGLEMAPS_API_KEY = 'YOUR_API_KEY'; // Replace with your API key
+  const [activeClinic, setActiveClinic] = useState(null);
+  const [nearClinics, setNearClinics] = useState([]);
+  const [allClinics, setAllClinics] = useState([]);
 
-export default function ClinicFinder() {
-  const { isLoaded } = useJsApiLoader({
-    id: 'googleMaps',
-    googleMapsApiKey: GOOGLEMAPS_API_KEY // Use the constant
-  });
-
-  const [map, setMap] = useState(null);
-  const [userLocation, setUserLocation] = useState(null);
-  const [nearbyLocations, setNearbyLocations] = useState([]);
-  const [selectedLocation, setSelectedLocation] = useState(null);
+  const mapRef = useRef(null);
 
   useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          setUserLocation({
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-          });
-          if (map) {
-            map.panTo({
-              lat: position.coords.latitude,
-              lng: position.coords.longitude,
-            });
-          }
-        },
-        (error) => {
-          console.error("Error getting location:", error);
-        }
-      );
-    } else {
-      console.error("Geolocation not supported.");
-    }
-  }, [map]);
-
-  useEffect(() => {
-    const fetchNearbyLocations = async () => {
-      // Placeholder Data:
-      const sampleData = [
-        { id: 1, name: "Coffee Shop A", lat: 29.65, lng: -82.32 }, // Corrected lng
-        { id: 2, name: "Park B", lat: 29.66, lng: -82.31 },
-        { id: 3, name: "Restaurant C", lat: 29.64, lng: -82.33 },
-      ];
-      setNearbyLocations(sampleData);
+    const loadAllClinics = async () => {
+      setLoading(true);
+      try {
+        const res = await getAllClinics();
+        setAllClinics(res);
+      } catch (error) {
+        console.error("Error loading clinics:", error);
+        setError("Error loading clinics.");
+      } finally {
+        setLoading(false);
+      }
     };
+    loadAllClinics();
+  }, []);
 
-    if (userLocation) {
-      fetchNearbyLocations();
+  const handlePlaceSelect = async (place) => {
+    if (!place || !place.geometry) {
+      setError("Selected place has no geometry.");
+      return;
     }
-  }, [userLocation]);
+    setSelectedPlace(place);
+    setError(null);
+    const lat = place.geometry.location.lat();
+    const lng = place.geometry.location.lng();
 
-  const onLoad = function(map) {
-    setMap(map);
+    setMapCenter({ lat, lng });
+    setZoom(13); // Consistent zoom level for place selection and marker click
+
+    setLoading(true);
+    try {
+      const clinicsData = await getNearbyClinics(lat, lng);
+      setNearClinics(clinicsData);
+    } catch (err) {
+      console.error("Error fetching clinics:", err);
+      setError("Error fetching clinics.");
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const onUnmount = function() {
-    setMap(null);
+  const handleMarkerClick = (clinic) => {
+    setActiveClinic(clinic);
+    setZoom(13); // Consistent zoom level
+    setMapCenter({ lat: clinic.lat, lng: clinic.lng });
   };
 
-  return isLoaded ? (
-    <GoogleMap
-      mapContainerStyle={containerStyle}
-      center={userLocation || center}
-      zoom={14}
-      onLoad={onLoad}
-      onUnmount={onUnmount}
-    >
-      {userLocation && <Marker position={userLocation} />}
-      {nearbyLocations.map((location) => (
-        <Marker
-          key={location.id} // Use a unique key (id is best)
-          position={{ lat: location.lat, lng: location.lng }} // Corrected lng
-          onClick={() => setSelectedLocation(location)}
-        >
-          {/* You can add content to the marker here if needed */}
-        </Marker>
-      ))}
+  return (
+    <div className="flex flex-col w-full justify-start mt-11 ">
+      <h2 className="text-5xl m-5 text-fuchsia-950 font-bold">Find Clinics Near You</h2>
+      <div className="flex flex-col w-[1300px] gap-7 justify-center">
+        <PlaceAutocompleteClassic onPlaceSelect={handlePlaceSelect} />
+        {error && <p style={{ color: "red" }}>{error}</p>}
+        {loading && <p>Loading clinics...</p>}
 
-      {selectedLocation && (
-        <InfoWindow
-          position={{ lat: selectedLocation.lat, lng: selectedLocation.lng }}
-          onCloseClick={() => setSelectedLocation(null)}
-        >
-          <div>
-            <h3>{selectedLocation.name}</h3>
-          </div>
-        </InfoWindow>
-      )}
-    </GoogleMap>
-  ) : (
-    <div>Map not loaded...</div>
+        <div>
+          <Map
+            style={{ width: "100%", height: "600px" }}
+            center={mapCenter}
+            zoom={zoom}
+            // defaultCenter prop removed - using initial mapCenter state
+            scrollwheel={true}
+            defaultZoom={defaultZoomLevel} // Use defaultZoomLevel constant
+            reuseMaps={true}
+            onCenterChanged={(map) => setMapCenter(map.detail.center)} // Can destructure here if desired
+            onZoomChanged={(map) => setZoom(map.detail.zoom)}       // Can destructure here if desired
+            options={{
+              gestureHandling: "greedy",
+              draggable: true,
+            }}
+            ref={mapRef}
+            mapId={"f581f64e2de5941c"}
+          >
+            {allClinics.map((clinic) => (
+              <Marker
+                key={clinic._id}
+                position={{ lat: clinic.lat, lng: clinic.lng }}
+                title={clinic.name}
+                onClick={() => handleMarkerClick(clinic)}
+              />
+            ))}
+
+            {activeClinic && (
+              <InfoWindow
+                position={{ lat: activeClinic.lat, lng: activeClinic.lng }}
+                onCloseClick={() => setActiveClinic(null)}
+              >
+                <div>
+                  <h3 className="text-black">{activeClinic.name}</h3>
+                </div>
+              </InfoWindow>
+            )}
+          </Map>
+        </div>
+
+        <div className="flex flex-col p-5 bg-gray-100 rounded-lg shadow-lg w-[300px] h-auto overflow-y-auto">
+          <h3 className="text-xl font-semibold mb-4 text-black">Nearby Clinics</h3>
+          <ul className="flex flex-row space-y-2 items-center text-center">
+            {nearClinics.map((clinic) => (
+              <li
+                key={clinic._id}
+                className="text-lg text-gray-800"
+                onClick={() => handleMarkerClick(clinic)}
+              >
+                {clinic.name}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
   );
-}
+};
+
+export default ClinicFinder;

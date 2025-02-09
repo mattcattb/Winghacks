@@ -37,6 +37,7 @@ const EmbrePillCanvas = () => {
     return (
         <div className={'embre-in-action'}>
         <Canvas
+            style={{width:"25vw", height:"40vh"}}
             frameloop="demand"
             shadows
             dpr={[1, 2]}

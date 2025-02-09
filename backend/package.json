@@ -5,7 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/index.ts", 
-    "seed": "nodemon src/seed/stateSeed.ts"
+    "seed:states": "nodemon src/seed/stateSeed.ts",
+    "seed:clinics": "nodemon src/seed/clinicSeed.ts"
   },
   "keywords": [],
   "author": "",
