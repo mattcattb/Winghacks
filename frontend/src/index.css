@@ -128,3 +128,6 @@ button {
   opacity: 0;
   pointer-events: none;
 }
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';

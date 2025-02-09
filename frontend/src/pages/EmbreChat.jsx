@@ -55,7 +55,6 @@ export default function EmbreChat(){
     
     return <div>
         <div className= "phone-container">
-            <img src={phone} alt="phone" className='phone'/>
             <div className={`bubble-container ${ showBubble ===  0 ? "fade-in" :"fade-out"}`}>
                 <div className="bubble-left">
                     Hello! I hope you are doing well. Please select what state you are in so I can help you!
