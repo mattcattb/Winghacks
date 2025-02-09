@@ -91,7 +91,12 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: var(--dark-purple);
+  background-color: var(--light-purple);
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-top: 20%;
+  bottom: 0;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -104,3 +109,19 @@ button {
   justify-content: center;
   overflow: auto;
 }
+<<<<<<< HEAD
+=======
+
+.rs-anim-fade{
+  height: 30vh;
+}
+
+.fade-in{
+  opacity: 1;
+}
+
+.fade-out{
+  opacity: 0;
+  pointer-events: none;
+}
+>>>>>>> 4f329955604fb1b84ff7c2d90fb7ecf0cbf96459

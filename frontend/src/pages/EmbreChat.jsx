@@ -1,17 +1,39 @@
 import phone from '../assets/phone.svg';
 import EmbreCanvas from "../threemodels/Embre.jsx";
-import { InputPicker } from 'rsuite';
+import { InputPicker, InputNumber } from 'rsuite';
+import { useState } from 'react';
 import 'rsuite/InputPicker/styles/index.css';
 
 
 export default function EmbreChat(){
 
+
+    //on close, pass the label into array to keep hold of for time being
+
+    const [state, setState] = useState('')
+
+    const handleClose =(value, item) =>{
+        setState(item.label);
+        handleNextStep();
+        console.log(item.label)
+    }
     
+    const [showBubble, setBubble] = useState(0)
+
+    const [weeks, setWeeks] = useState('')
+
+    const handleWeeks = (value,item) =>{
+        setWeeks(item.label)
+    }
+
+    const handleNextStep = () => {
+        setBubble(prevStep => prevStep + 1);
+    };
     
     return <div>
         <div className= "phone-container">
             <img src={phone} alt="phone" className='phone'/>
-            <div className="bubble-container">
+            <div className={`bubble-container ${ showBubble==  0 ? "fade-in" :"fade-out"}`}>
                 <div className="bubble-left">
                     Hello! I hope you are doing well. Please select what state you are in so I can help you!
                 </div>
@@ -67,13 +89,22 @@ export default function EmbreChat(){
                         {label: 'West Virginia', value: 'WV'},
                         {label: 'Wisconsin', value: 'WI'},
                         {label: 'Wyoming', value: 'WY'},
-                        ]} />
-
+                        ]} 
+                        onSelect={handleClose}
+                        />
                 </div>
-            </div>    
+                <button>✔</button>
+            </div> 
+            <div className={`bubble-container ${showBubble ==1 ? "fade-in" : "fade-out"}`} >
+                <div className='bubble-left'>
+                    Thank you! Now, if you don't mind me asking, how many weeks ago was your last period?
+                </div>
+                <div className='bubble-right'>
+                    <InputNumber />
+                </div>
+            </div>   
         </div>
         <EmbreCanvas/>
-
     </div>
 
 
