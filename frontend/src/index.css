@@ -61,16 +61,15 @@ body {
 h1 {
   background-color: #1F0322;
   padding: 6vh 6vh; /* Add padding around the text */
-  border-radius: 5vh; /* Optional: Rounded corners */
   display: inline-block;
   font-size: 2em;
   font-family: "GelicaBlack";
   line-height: 1;
-
+  
 }
 h2 {
   color: #1f0322;
-  font-size: 1.4em;
+  font-size: 1.2em;
   font-family: "GelicaBold";
   place-items: center;
   max-width: 80vw;
@@ -83,9 +82,9 @@ h3{
 
 .home-page-text{
   color: #1F0322;
-  padding: 30 px;
+  padding: 0.vh;
   font-family: "GelicaRegular";
-  font-size: 1.25em;
+  font-size: 1em;
   max-width: 60vw;
 }
 
