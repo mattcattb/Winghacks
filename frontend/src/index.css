@@ -109,8 +109,6 @@ button {
   justify-content: center;
   overflow: auto;
 }
-<<<<<<< HEAD
-=======
 
 .rs-anim-fade{
   height: 30vh;
@@ -124,4 +122,3 @@ button {
   opacity: 0;
   pointer-events: none;
 }
->>>>>>> 4f329955604fb1b84ff7c2d90fb7ecf0cbf96459
