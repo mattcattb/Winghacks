@@ -1,29 +1,33 @@
-import { BrowserRouter as Router,Routes,Route } from "react-router-dom";
-import Home from './pages/Home';
-import Map from './pages/Map'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Map from "./pages/Map";
 import ClinicFinder from "./pages/ClinicFinder";
-import Navbar from './components/nav-bar'
-import './App.css'
+import Navbar from "./components/nav-bar";
+import "./App.css";
+
+import {APIProvider} from '@vis.gl/react-google-maps'
 
 const App = () => {
-
+  
+  const VITE_GEOCODING_API_KEY = import.meta.env.VITE_GEOCODING_API_KEY
+  console.log(`Geocoding api: ${VITE_GEOCODING_API_KEY}`)
+  
   return (
-    <div>
-      <Router>
-        <Navbar />
-        <main className="pt-20">
+    <APIProvider apiKey={VITE_GEOCODING_API_KEY}>
+      <div>
+        <Router>
+          <Navbar />
+          <main className="">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/map" element={<Map />} />
+              <Route path="/clinics" element={<ClinicFinder />} />
+            </Routes>
+          </main>
+        </Router>
+      </div>
+    </APIProvider>
+  );
+};
 
-          <Routes>
-              <Route path="/" element={<Home/>}/>
-              <Route path="/map" element={<Map/>}/>
-              <Route path="/clinics" element={<ClinicFinder/>}/>
-          </Routes>
-        </main>
-
-      </Router>
-    </div>
-
- );
-}
-
-export default App
+export default App;

@@ -1,7 +1,8 @@
 import EmbreCanvas from "../threemodels/Embre.jsx";
 function Home()
 {
-    return <div className="page">
+    return (
+    <div className="flex flex-col">
         <h1>Pl<span style={{color:"#F4D7E3"}}>a</span>n Your C<span style={{color:"#F4D7E3"}}>a</span>re</h1>
         <div className="landing-container">
             <h2> Our mission is to universalize access to clear and comprehensive information on 
@@ -18,6 +19,6 @@ function Home()
             </p>
             <p>Reproductive rights are not just a privilege, but a universal reality.</p>
         </div>
-    </div>;
+    </div>);
 }
 export default Home;

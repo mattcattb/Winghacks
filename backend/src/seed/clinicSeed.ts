@@ -2,10 +2,9 @@
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 
-import StateDataModel from '../models/stateStats.model';
-import { StateDataInterface } from '../types/state';
+import ClinicModel from '../models/clinic.model';
 
-import {statesArray} from './statesSeed.data';
+import {clinicsData} from './clinicSeed.data'
 
 dotenv.config(); // Load environment variables (for DB connection)
 
@@ -21,10 +20,10 @@ const seedDatabase = async () => {
     await mongoose.connect(mongoURI); // Connect to your database
 
     // Clear existing data (optional, but good for development)
-    await StateDataModel.deleteMany({}); // Delete all existing documents
+    await ClinicModel.deleteMany({}); // Delete all existing documents
 
-    await StateDataModel.insertMany(statesArray); // Insert the new data
-    console.log('Database seeded successfully!');
+    await ClinicModel.insertMany(clinicsData); // Insert the new data
+    console.log('Clinics Database seeded successfully!');
   } catch (error) {
     console.error('Error seeding database:', error);
   } finally {

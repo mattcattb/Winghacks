@@ -1,4 +1,6 @@
-const clinics = [
+import { Clinic } from "../types/clinic"
+
+export const clinicsData: Clinic[] = [
   {
       name: "Bread & Roses Women's Health Center - Gainesville Woman Care",
       lat:  29.66111761247634, 
