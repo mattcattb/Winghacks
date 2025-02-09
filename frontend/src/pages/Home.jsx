@@ -1,4 +1,4 @@
-import EmbreCanvas from "./Embre.jsx";
+import EmbreCanvas from "../threemodels/Embre.jsx";
 import Bubble from "../assets/speech-bubble-message.svg";
 
 
