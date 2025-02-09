@@ -69,6 +69,7 @@ path:hover{
   align-items: flex-start; /* Align left-side bubbles to the left */
   justify-content: flex-start;
   gap: 10px; /* Space between stacked bubbles */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
 
