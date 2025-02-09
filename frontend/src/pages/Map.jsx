@@ -12,7 +12,7 @@ function Map() {
     return (
     <div className='flex flex-col'>
       <div className={"map-header"}>
-          <h1>What is the state of your state?</h1>
+          <h1 style={{fontSize:"2em"}}>What is the state of your state?</h1>
       </div>
       <div className={'map-art'}>
 
