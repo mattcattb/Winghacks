@@ -50,3 +50,61 @@ path:hover{
   fill: var(--light-pink);
   transition: 100ms;
 }
+
+
+.phone-container {
+  position: relative;
+  width: 440px; 
+  height: 655px; /* Adjust to the height of your phone SVG */
+  margin: 0 auto;
+}
+
+.bubble-container{
+  position: absolute;
+  top: 20%; /* Start positioning bubbles a bit down the phone */
+  left: 0;
+  right: 0;
+  width: 240px;
+  transform: translateX(42%); /* Center the bubbles */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align left-side bubbles to the left */
+  justify-content: flex-start;
+  gap: 10px; /* Space between stacked bubbles */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+
+.phone {
+  width: 100%; /* Makes the phone SVG fill the container */
+  height: auto;
+}
+.bubble-left, .bubble-right {
+  width: auto;
+  max-width: 40%; /* Prevent the bubble from being too wide */
+  padding: 10px 20px;
+  background-color: #F4D7E3;
+  color: black;
+  border-radius: 20px;
+  font-size: 16px;
+  word-wrap: break-word;
+  margin-left: 10px; /* Add margin to the left of left bubbles */
+  margin-right: 10px; /* Add margin to the right of right bubbles */
+}
+
+.bubble-left {
+  align-self: flex-start; /* Align left-side bubble to the left */
+}
+
+.bubble-right {
+  align-self: flex-end; /* Align right-side bubble to the right */
+}
+
+.rs-picker-toggle{
+  width: auto;
+  left:0;
+}
+
+.rs-picker{
+  width: 110%;
+}
