@@ -1,8 +1,10 @@
 import phone from '../assets/phone.svg';
 import EmbreCanvas from "../threemodels/Embre.jsx";
 import { InputPicker, InputNumber } from 'rsuite';
-import { useState } from 'react';
+import { useState , useEffect} from 'react';
+import questionLogic from '../api/questionLogic.js';
 import 'rsuite/InputPicker/styles/index.css';
+import statesArray from '../../../staticDB/states.js';
 
 
 export default function EmbreChat(){
@@ -10,25 +12,43 @@ export default function EmbreChat(){
 
     //on close, pass the label into array to keep hold of for time being
 
-    const [state, setState] = useState('')
+    const [state, setState] = useState('');
+    const [weeks, setWeeks] = useState('');
+    const [showBubble, setBubble] = useState(0);
+    const [aborMess, setAborMess] = useState('error'); // state to hold the abortion message
+    const [matchedState, setMatchedState] = useState(null);
 
-    const handleClose =(value, item) =>{
-        setState(item.label);
-        handleNextStep();
-        console.log(item.label)
+    const handleStateSelect =(selectedValue) =>{
+        console.log(selectedValue);
+ 
+        setState(selectedValue); //passes in an abbriviation
+    
     }
     
-    const [showBubble, setBubble] = useState(0)
-
-    const [weeks, setWeeks] = useState('')
-
-    const handleWeeks = (value,item) =>{
-        setWeeks(item.label)
+    
+    const handleWeeks = (label, item) =>{
+        setWeeks(item.label);
     }
 
     const handleNextStep = () => {
         setBubble(prevStep => prevStep + 1);
+
+        if (showBubble === 3) {
+            const { data, aborMess } = questionLogic(state, weeks);
+            setMatchedState(data);
+            setAborMess(aborMess); 
+            console.log(aborMess)
+        }
     };
+
+
+    // useEffect(() => {
+    //     if (state && weeks) {
+    //         const { data, aborMess } = questionLogic(state, weeks);
+    //         setMatchedState(data); // Store the matched state data
+    //         setAborMess(aborMess); // Set the abortion message
+    //     }
+    // }, [state, weeks]); 
     
     return <div>
         <div className= "phone-container">
@@ -90,21 +110,32 @@ export default function EmbreChat(){
                         {label: 'Wisconsin', value: 'WI'},
                         {label: 'Wyoming', value: 'WY'},
                         ]} 
-                        onSelect={handleClose}
+                        value={state}
+                        onChange={handleStateSelect}
+                        
                         />
                 </div>
-                <button>✔</button>
+                <button onClick= {handleNextStep}>:D</button>
             </div> 
             <div className={`bubble-container ${showBubble ==1 ? "fade-in" : "fade-out"}`} >
                 <div className='bubble-left'>
                     Thank you! Now, if you don't mind me asking, how many weeks ago was your last period?
                 </div>
                 <div className='bubble-right'>
-                    <InputNumber />
+                    <InputNumber 
+                    max={30}
+                    onChange={handleWeeks}
+                    />
                 </div>
-            </div>   
+                <button onClick= {handleNextStep} style={{"marginTop": "10%"}}>:D</button>
+            </div> 
+            <div className={`bubble-container ${showBubble == 2 ? 'fade-in' : 'fade-out'}`}>  
+                    <div className='bubble-left'>
+                        {aborMess}
+                    </div>
+            </div>
         </div>
-        <EmbreCanvas/>
+        <EmbreCanvas className="EmbreChat"/>
     </div>
 
 
