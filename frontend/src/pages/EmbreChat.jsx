@@ -56,7 +56,7 @@ export default function EmbreChat(){
     return <div>
         <div className= "phone-container">
             <img src={phone} alt="phone" className='phone'/>
-            <div className={`bubble-container ${ showBubble==  0 ? "fade-in" :"fade-out"}`}>
+            <div className={`bubble-container ${ showBubble ===  0 ? "fade-in" :"fade-out"}`}>
                 <div className="bubble-left">
                     Hello! I hope you are doing well. Please select what state you are in so I can help you!
                 </div>
@@ -120,7 +120,7 @@ export default function EmbreChat(){
                 </div>
                 <button onClick= {handleNextStep}>:D</button>
             </div> 
-            <div className={`bubble-container ${showBubble ==1 ? "fade-in" : "fade-out"}`} >
+            <div className={`bubble-container ${showBubble === 1 ? "fade-in" : "fade-out"}`} >
                 <div className='bubble-left'>
                     Thank you! Now, if you don't mind me asking, how many weeks ago was your last period?
                 </div>
@@ -132,7 +132,7 @@ export default function EmbreChat(){
                 </div>
                 <button onClick= {handleNextStep} style={{"marginTop": "10%"}}>:D</button>
             </div> 
-            <div className={`bubble-container ${showBubble == 2 ? 'fade-in' : 'fade-out'}`}>  
+            <div className={`bubble-container ${showBubble === 2 ? 'fade-in' : 'fade-out'}`}>
                     <div className='bubble-left'>
                         {aborMess}
                     </div>
