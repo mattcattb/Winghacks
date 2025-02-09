@@ -24,6 +24,8 @@ function questionLogic(state, weeks){
     }
 
     let aborMess = '';
+    let weekMess = data.weeksBan;
+    
 
     if (avaAbort === true){
         aborMess = "You are still able to recieve an abortion at this stage! Use the ClinicFinder to find the nearest clinic"
