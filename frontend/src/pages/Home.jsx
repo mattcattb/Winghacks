@@ -38,21 +38,21 @@ function Home() {
       <footer className="mt-20 md:mt-32 w-auto bg-alice-blue py-12 px-6 md:px-12 bg-white rounded-3xl"> {/* Improved spacing and background */}
         <div className="references max-w-3xl mx-auto flex flex-col md:flex-row justify-between"> {/* Improved layout for larger screens */}
           <div className="md:w-1/2"> {/* Added width for larger screens */}
-            <h3 className="text-purple-800 font-semibold mb-4 text-xl">References:</h3> {/* Improved margin-bottom and text size */}
+            <h3 className="text-[#AA7DCE] font-semibold mb-4 text-xl">References:</h3> {/* Improved margin-bottom and text size */}
             <ul className="space-y-2"> {/* Added spacing between list items */}
-              <li><a href="https://reproductiverights.org/maps/abortion-laws-by-state/" className="text-pink-800 hover:text-light-pink block">Center for Reproductive Rights</a></li>
-              <li><a href="https://www.plannedparenthoodaction.org/abortion-access-tool/US" className="text-pink-800 hover:text-light-pink block">Planned Parenthood</a></li>
-              <li><a href="https://www.plancpills.org/" className="text-pink-800 hover:text-light-pink block">Plan C Pills</a></li>
-              <li><a href="https://www.usnews.com/news/best-states/articles/a-guide-to-abortion-laws-by-state" className="text-pink-800 hover:text-light-pink block">US NEWS Guide to Abortion</a></li>
-              <li><a href="https://www.capradio.org/articles/2022/06/24/abortion-is-still-legal-in-california-here-are-answers-to-questions-about-access-in-the-state/" className="text-pink-800 hover:text-light-pink block">Capradio</a></li>
+              <li><a href="https://reproductiverights.org/maps/abortion-laws-by-state/" className="text-[#A8577E] hover:text-light-pink block">Center for Reproductive Rights</a></li>
+              <li><a href="https://www.plannedparenthoodaction.org/abortion-access-tool/US" className="text-[#A8577E] hover:text-light-pink block">Planned Parenthood</a></li>
+              <li><a href="https://www.plancpills.org/" className="text-[#A8577E] hover:text-light-pink block">Plan C Pills</a></li>
+              <li><a href="https://www.usnews.com/news/best-states/articles/a-guide-to-abortion-laws-by-state" className="text-[#A8577E] hover:text-light-pink block">US NEWS Guide to Abortion</a></li>
+              <li><a href="https://www.capradio.org/articles/2022/06/24/abortion-is-still-legal-in-california-here-are-answers-to-questions-about-access-in-the-state/" className="text-[#A8577E] hover:text-light-pink block">Capradio</a></li>
             </ul>
           </div>
 
           <div className="md:w-1/2 mt-12 md:mt-0"> {/* Added width and margin-top for larger screens */}
-            <h3 className="text-purple-800 font-semibold mb-4 text-xl">Useful Resources</h3> {/* Improved margin-bottom and text size */}
+            <h3 className="text-[#AA7DCE] font-semibold mb-4 text-xl">Useful Resources</h3> {/* Improved margin-bottom and text size */}
             <ul className="space-y-2"> {/* Added spacing between list items */}
-              <li><a href="https://prochoice.org/" className="text-pink-800 hover:text-pink-950 block">National Abortion Hotline: 1-800-772-9100</a></li>
-              <li><a href="https://abortionfunds.org/" className="text-pink-800 hover:text-light-pink block">National Network of Abortion Funds</a></li>
+              <li><a href="https://prochoice.org/" className="text-[#A8577E] hover:text-pink-950 block">National Abortion Hotline: 1-800-772-9100</a></li>
+              <li><a href="https://abortionfunds.org/" className="text-[#A8577E] hover:text-light-pink block">National Network of Abortion Funds</a></li>
               <li><a href="https://reproductivefreedomforall.org/resources/resources-for-accessing-abortion-care/" className="text-pink-900  hover:text-light-pink block">Reproductive freedom for all</a></li>
             </ul>
           </div>

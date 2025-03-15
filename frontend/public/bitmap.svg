@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="70mm"
+   height="227mm"
+   viewBox="0 0 70 227"
+   version="1.1"
+   id="svg1"
+   inkscape:export-filename="bitmap.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm" />
+  <defs
+     id="defs1">
+    <linearGradient
+       id="linearGradient1"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#d52d00;stop-opacity:1;"
+         offset="0"
+         id="stop1" />
+      <stop
+         style="stop-color:#ff9a56;stop-opacity:1;"
+         offset="0.5"
+         id="stop3" />
+      <stop
+         style="stop-color:#b55690;stop-opacity:1;"
+         offset="1"
+         id="stop2" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1"
+       id="linearGradient2"
+       x1="53.121948"
+       y1="38.634148"
+       x2="54.329266"
+       y2="198"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g3"
+       transform="translate(-18.109756,-4.8292683)">
+      <rect
+         style="fill:url(#linearGradient2);fill-opacity:1;stroke-width:0.264583"
+         id="rect1"
+         width="28.975611"
+         height="162.98781"
+         x="39.841461"
+         y="35.615852" />
+      <text
+         xml:space="preserve"
+         style="font-size:14.1111px;white-space:pre;inline-size:104.514;fill:#1060ff;fill-opacity:1;stroke-width:0.264583"
+         x="119.45501"
+         y="39.841461"
+         id="text3"
+         transform="matrix(0.70272442,0,0,0.71760312,-66.940808,-7.6875291)"><tspan
+           x="119.45501"
+           y="39.841461"
+           id="tspan7"><tspan
+             style="font-family:'Bookman Old Style';-inkscape-font-specification:'Bookman Old Style';text-align:center;text-anchor:middle;fill:#250e00"
+             id="tspan6">Most </tspan></tspan><tspan
+           x="119.45501"
+           y="57.853408"
+           id="tspan9"><tspan
+             style="font-family:'Bookman Old Style';-inkscape-font-specification:'Bookman Old Style';text-align:center;text-anchor:middle;fill:#250e00"
+             id="tspan8">Restrictive</tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:14.1111px;white-space:pre;inline-size:104.514;fill:#1060ff;fill-opacity:1;stroke-width:0.264583"
+         x="119.45501"
+         y="39.841461"
+         id="text3-0"
+         transform="matrix(0.70272442,0,0,0.71760312,-67.078958,178.8939)"><tspan
+           x="119.45501"
+           y="39.841461"
+           id="tspan11"><tspan
+             style="font-family:'Bookman Old Style';-inkscape-font-specification:'Bookman Old Style';text-align:center;text-anchor:middle;fill:#250e00"
+             id="tspan10"> Least
+</tspan></tspan><tspan
+           x="119.45501"
+           y="57.853408"
+           id="tspan13"><tspan
+             style="font-family:'Bookman Old Style';-inkscape-font-specification:'Bookman Old Style';text-align:center;text-anchor:middle;fill:#250e00"
+             id="tspan12">Restrictive</tspan></tspan></text>
+    </g>
+  </g>
+</svg>

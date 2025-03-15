@@ -10,7 +10,6 @@ import {mapData} from '../assets/mapSVG.js'
 import {getAllStatesData} from '../api/statesData.js'
 
 import { getRestrictionColor, getStateFill } from "../api/colorUtils.js";
-
 import "../style.css";
 
 
@@ -55,7 +54,6 @@ function Map() {
       <h1 className="bg-[#1F0322] px-[6vh] py-[6vh] rounded-[5vh] inline-block text-[3em] font-gelica-black leading-[0.5]">
         Find resources for your state.
       </h1>
-
 
       </div>
       <div className={"map-art"}>
