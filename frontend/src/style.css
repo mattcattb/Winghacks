@@ -1,5 +1,45 @@
+nav {
+    background: #1F0322;
+    padding: 0px;
+    width: 100%;
+    top:0;
+    left:0;
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    gap: 0px;
+    z-index:100;
+    position: fixed;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
 
+nav a {
+    color: white;
+    text-decoration: none;
+    line-height: 75px; 
+    flex: 1;
+    text-align: center;
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 0px;
+}
 
+nav a:hover{
+    background-color: #AA7DCE;
+    color: #1F0322;
+}
+.embre-pill-map {
+    display:flex;
+    position: absolute;
+    bottom: 80px;
+    left: 20px;
+    width:200px;
+    height: 150px;
+    z-index: -10;
+    align-items:center;
+    justify-content: center;
+    margin:0;
+}
 
 .home-page-embre{
     float: right;
@@ -10,3 +50,12 @@
     
 }
 
+.embre-in-action{
+    width:100vw;
+    height: 100vh;
+    left:-37vw;
+    display:flex;
+    bottom: -10vh;
+    position:absolute;
+    z-index:-10;
+}

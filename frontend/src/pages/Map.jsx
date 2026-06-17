@@ -1,6 +1,4 @@
-// import 'leaflet/dist/leaflet.css';
-import WeirdMapComp from "../components/WeirdMapComp";
-import "../App.css";
+import MapComponent from '../components/MapComponent.jsx';
 
 import EmbrePillCanvas from "../threemodels/EmbrePill.jsx";
 import { useState, useEffect, useRef } from "react";
